@@ -8,7 +8,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: $primary;
+  font-size: 14px;
+  color: $dark;
 }
 
 a {
@@ -27,7 +28,7 @@ li {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
-  flex-align: $align;
+  align-items: $align;
 }
 
 /* == Inline List == */
@@ -37,6 +38,9 @@ li {
     list-style: none;
     display: inline-block;
     padding: 0 $padding + px;
+  }
+  li:last-child{
+    padding-right: 0;
   }
 }
 
@@ -97,7 +101,7 @@ li {
 }
 
 /* == Text Weight == */
-.u-text--light {
+.u-text--thin {
   font-weight: 300;
 }
 
@@ -107,6 +111,14 @@ li {
 
 .u-text--bold {
   font-weight: 700;
+}
+
+.u-text--light {
+  color: $light;
+}
+
+.u-text--dark {
+  color: $dark;
 }
 
 /* == Text Position == */
@@ -120,4 +132,10 @@ li {
 
 .u-text--lx {
   text-align: left;
+}
+
+//Debugging
+
+.debug{
+  color: green;
 }

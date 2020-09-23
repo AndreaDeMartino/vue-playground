@@ -1,5 +1,9 @@
-/* === Import Scss Files === */
 @import "variables.scss";
 @import "breakpoint.scss";
 @import "grid.scss";
 @import "common.scss";
+
+.debug-bg{
+  color: red;
+}
+

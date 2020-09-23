@@ -2,30 +2,6 @@
   * VARIABLES
 ****************************************************/
 
-/* === Colors === */
-$primary:#2c3e50;
-$secondary: #7f8c8d;
-$danger:#c0392b;
-$alert: #f39c12;
-$success: #27ae60;
-$info: #2980b9;
-
-/* === Fonts === */
-@font-face {
-  font-family: "gotham-bold";
-  src: url("/src/assets/fonts/Gotham-Bold.otf") ;
-}
-
-@font-face {
-  font-family: "gotham-book";
-  src: url("/src/assets/fonts/Gotham-Book.otf");
-}
-
-@font-face {
-  font-family: "gotham-medium";
-  src: url("/src/assets/fonts/Gotham-Medium.otf");
-}
-
 /* === GRID SYSTEM === */
 $columns: 12; /* Number of columns in the grid system */
 $block: 0; /* Default width of the element */
@@ -33,3 +9,60 @@ $block: 0; /* Default width of the element */
 /* === MARGIN & PADDING === */
 $ranges: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100); /* Pixels */
 $sides: (top, bottom, left, right);
+
+/* === COLORS === */
+$light: #fff;
+$dark: #000;
+$flash: #b93758;
+$gold: #c59917;
+$bg_light: #ebebeb;
+$bg_dark: #cccccc;
+$icons: #4d4d4d;
+
+/* === FONTS === */
+@font-face {
+  font-family: "gotham-bold";
+  src: url("/src/assets/fonts/Gotham-Bold.otf") format("otf");
+}
+
+@font-face {
+  font-family: "gotham-book";
+  src: url("/src/assets/fonts/Gotham-Book.otf") format("otf");
+}
+
+@font-face {
+  font-family: "gotham-medium";
+  src: url("/src/assets/fonts/Gotham-Medium.otf") format("otf");
+}
+
+/* === TYPOGRAPHY === */
+
+h1 {
+  font-size: 80px;
+  font-family: "gotham-bold";
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 70px;
+  font-family: "gotham-bold";
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 16px;
+  font-family: "gotham-book";
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 14px;
+  font-family: "gotham-book";
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 10px;
+  font-family: "gotham-book";
+  font-weight: 400;
+}
