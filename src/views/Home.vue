@@ -1,6 +1,7 @@
 <template>
 <div class="home">
   <app-header></app-header>
+  <div class="section"></div>
 </div>
 
   
@@ -21,6 +22,11 @@ export default {
 <style lang="scss" scoped>
 .home{
   position: relative;
-  width: 100vw;
+  width: 100%;
+}
+.section{
+  background: #ccc;
+  height: 100vh;
+  width: 100%;
 }
 </style>

@@ -31,23 +31,50 @@ export default {};
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000;
   z-index: 10;
   .navbar {
-    @include u-flex(row, space-between, center);
+    @include u-flex(column, space-between, center);
     padding: 20px 0;
     &__left {
+      margin-bottom: 10px;
       .navbar__logo {
         width: 150px;
       }
     }
     &__right {
       .navbar__list {
-        @include u-list(25);
+        @include u-list(10);
         h4 {
           color: $light;
+          font-weight: 300;
+          letter-spacing: 0.1em;
+          &:hover {
+            @include u-led;
+          }
         }
       }
+    }
+  }
+  @include desktop {
+    .navbar {
+      flex-direction: row;
+    }
+    .navbar__left {
+      margin-bottom: 0;
+    }
+    .navbar__list {
+      @include u-list(20);
+    }
+  }
+  @include large-desktop {
+    .navbar {
+      flex-direction: row;
+    }
+    .navbar__left {
+      margin-bottom: 0;
+    }
+    .navbar__list {
+      @include u-list(25);
     }
   }
 }

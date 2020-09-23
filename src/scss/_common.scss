@@ -39,10 +39,19 @@ li {
     display: inline-block;
     padding: 0 $padding + px;
   }
-  li:last-child{
+  li:last-child {
     padding-right: 0;
   }
 }
+
+/* == Neon == */
+@mixin u-led($color : $gold){
+  cursor: pointer;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $gold,
+    0 0 30px $gold, 0 0 40px $gold, 0 0 55px $gold, 0 0 75px $gold,
+    2px 2px 1px rgba(206, 199, 37, 0);
+}
+
 
 /* SPACING
    ============================= */
@@ -132,10 +141,4 @@ li {
 
 .u-text--lx {
   text-align: left;
-}
-
-//Debugging
-
-.debug{
-  color: green;
 }
