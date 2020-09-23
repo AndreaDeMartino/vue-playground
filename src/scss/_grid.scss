@@ -1,0 +1,127 @@
+/****************************************************
+  * CUSTOM GRID SYSTEM
+****************************************************/
+
+/* RESPONSIVE SYNTAX
+   =============================
+	1. = XS -
+	2. = SM --
+	3. = MD ---
+	4. = LG ----
+	5. = XL -----
+*/
+
+/* CONTAINER
+   ============================= */
+.u-container {
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+/* ROW
+   ============================= */
+.u-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* COLUMN
+   ============================= */
+@for $block from 1 through $columns {
+  .u-col--#{$block} {
+    flex-basis: $block / $columns * 100%;
+  }
+}
+
+/* RESPONSIVE
+   ============================= */
+
+/* == XS == */
+@include small-mobile {
+  @for $block from 1 through $columns {
+    .u-col__xs--#{$block} {
+      flex-basis: $block / $columns * 100%;
+    }
+  }
+  @for $block from 1 through $columns {
+    .u-offset__xs--#{$block} {
+      margin-left: $block / $columns * 100%;
+    }
+  }
+  .u-container {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+
+/* == SM == */
+@include mobile {
+  @for $block from 1 through $columns {
+    .u-col__sm--#{$block} {
+      flex-basis: $block / $columns * 100%;
+    }
+  }
+  @for $u-offset from 1 through $columns {
+    .u-offset__sm--#{$u-offset} {
+      margin-left: $u-offset / $columns * 100%;
+    }
+  }
+  .u-container {
+    margin: 0 auto;
+    max-width: 540px;
+  }
+}
+
+/* == MD == */
+@include tablet {
+  @for $block from 1 through $columns {
+    .u-col__md--#{$block} {
+      flex-basis: $block / $columns * 100%;
+    }
+  }
+  @for $u-offset from 1 through $columns {
+    .u-offset__md--#{$u-offset} {
+      margin-left: $u-offset / $columns * 100%;
+    }
+  }
+  .u-container {
+    margin: 0 auto;
+    max-width: 720px;
+  }
+}
+
+/* == LG == */
+@include desktop {
+  @for $block from 1 through $columns {
+    .u-col__lg--#{$block} {
+      flex-basis: $block / $columns * 100%;
+    }
+  }
+  @for $u-offset from 1 through $columns {
+    .u-offset__lg--#{$u-offset} {
+      margin-left: $u-offset / $columns * 100%;
+    }
+  }
+  .u-container {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+
+/* == XL == */
+@include large-desktop {
+  @for $block from 1 through $columns {
+    .u-col__xl--#{$block} {
+      flex-basis: $block / $columns * 100%;
+    }
+  }
+  @for $u-offset from 1 through $columns {
+    .u-offset__xl--#{$u-offset} {
+      margin-left: $u-offset / $columns * 100%;
+    }
+  }
+  .u-container {
+    margin: 0 auto;
+    max-width: 1140px;
+  }
+}

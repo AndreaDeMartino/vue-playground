@@ -1,0 +1,18 @@
+/****************************************************
+  * VARIABLES
+****************************************************/
+
+$primary:#2c3e50;
+$secondary: #7f8c8d;
+$danger:#c0392b;
+$alert: #f39c12;
+$success: #27ae60;
+$info: #2980b9;
+
+/* === GRID SYSTEM === */
+$columns: 12; /* Number of columns in the grid system */
+$block: 0; /* Default width of the element */
+
+/* === MARGIN & PADDING === */
+$ranges: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100); /* Pixels */
+$sides: (top, bottom, left, right);

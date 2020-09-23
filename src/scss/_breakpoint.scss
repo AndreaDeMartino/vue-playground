@@ -1,0 +1,38 @@
+/****************************************************
+  * BREAKPOINT (Desktop First)
+****************************************************/
+
+/* === SMALL PHONES === */
+@mixin small-mobile {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
+/* === PHONES === */
+@mixin mobile {
+  @media (min-width: 576px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+/* === TABLETS === */
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+/* === DESKTOP === */
+@mixin desktop {
+  @media (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+/* === LARGE DESKTOP === */
+@mixin large-desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

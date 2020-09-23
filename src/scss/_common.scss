@@ -1,0 +1,123 @@
+/****************************************************
+* COMMON STYLES
+****************************************************/
+
+/* GENERAL RULES
+   ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $primary;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* UTILITY
+   ============================= */
+
+/* == Flex == */
+@mixin u-flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  flex-align: $align;
+}
+
+/* == Inline List == */
+@mixin u-list($padding: 3px) {
+  //use this mixin into <ul>
+  li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 $padding + px;
+  }
+}
+
+/* SPACING
+   ============================= */
+
+/* == Padding & Margin == */
+@each $range in $ranges {
+  @each $side in $sides {
+    .u-p#{str-slice($side, 0, 1)}--#{$range} {
+      padding-#{$side}: #{$range}px !important;
+    }
+    .u-m#{str-slice($side, 0, 1)}--#{$range} {
+      margin-#{$side}: #{$range}px !important;
+    }
+  }
+}
+
+/* == Width == */
+.u-width--25 {
+  width: 25%;
+}
+
+.u-width--50 {
+  width: 50%;
+}
+
+.u-width--75 {
+  width: 75%;
+}
+
+.u-width--100 {
+  width: 100%;
+}
+
+/* TEXT
+   ============================= */
+
+/* == Text Size == */
+.u-text--xs {
+  font-size: 0.5rem;
+}
+
+.u-text--sm {
+  font-size: 0.75rem;
+}
+
+.u-text--md {
+  font-size: 1rem;
+}
+
+.u-text--lg {
+  font-size: 2rem;
+}
+
+.u-text--xl {
+  font-size: 5rem;
+}
+
+/* == Text Weight == */
+.u-text--light {
+  font-weight: 300;
+}
+
+.u-text--normal {
+  font-weight: 400;
+}
+
+.u-text--bold {
+  font-weight: 700;
+}
+
+/* == Text Position == */
+.u-text--center {
+  text-align: center;
+}
+
+.u-text--rx {
+  text-align: right;
+}
+
+.u-text--lx {
+  text-align: left;
+}
