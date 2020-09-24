@@ -2,40 +2,80 @@
   <div class="tabs">
     <div class="tabs__wrapper">
       <div class="tabs__box">
-        <div class="tab tab--active">Vestibulum at odio sit amet</div>
-        <div class="tab">Sed vehicula neque</div>
-        <div class="tab">Nulla id libero pretium</div>
+        <div
+          class="tab"
+          :class="{ 'tab--active': active == 1 }"
+          @click="getData(1)"
+        >
+          Vestibulum at odio sit amet
+        </div>
+        <div
+          class="tab"
+          :class="{ 'tab--active': active == 2 }"
+          @click="getData(2)"
+        >
+          Sed vehicula neque
+        </div>
+        <div
+          class="tab"
+          :class="{ 'tab--active': active == 3 }"
+          @click="getData(3)"
+        >
+          Nulla id libero pretium
+        </div>
       </div>
 
       <div class="tabs__show">
-        Vestibulum at odio sit amet diam consectetur congue. Donec imperdiet
-        tincidunt nisi non dignissim. Maecenas diam metus, fermentum a velit ut,
-        auctor consequat ligula. In ultrices lobortis venenatis. Vestibulum ante
-        ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-        Quisque dignissim sit amet lectus ac tincidunt. Quisque bibendum mi at
-        tempus tempus. Suspendisse pretium, quam eu faucibus cursus, nunc leo
-        pharetra justo, ut rutrum lorem ipsum quis velit. Aenean imperdiet
-        molestie dignissim. Curabitur faucibus nulla metus, vel ornare libero
-        accumsan eget.
+
+        <template v-if="loader">
+          <div class="tabs__loader">
+            <img src="../assets/images/loader.png" alt="loader" />
+          </div>
+        </template>
+
+        <template v-else v-for="data in tabData">
+          <span> {{ data }}</span>
+        </template>
+        
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
-    return {};
+    return {
+      tabData: [],
+      active: 1,
+      loader: false,
+    };
+  },
+  methods: {
+    getData(tab) {
+      this.loader = true;
+
+      axios
+        .get("/tab" + tab)
+        .then((res) => {
+          this.tabData = res.data.content;
+          this.active = tab;
+          this.loader = false;
+        })
+        .catch((err) => (this.tabData = "Error"));
+    },
   },
   mounted() {
-    
+    this.getData(1);
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .tabs {
-  height: 500px;
+  min-height: 500px;
   width: 100%;
   background-color: $bg_light;
   @include u-flex;
@@ -48,6 +88,7 @@ export default {
         background-color: $bg_dark;
         font-family: "gotham-book";
         margin: 1px 0;
+        transition: background-color 0.3s linear;
         @include u-flex;
         cursor: pointer;
       }
@@ -58,10 +99,92 @@ export default {
     }
     .tabs__show {
       height: 350px;
-      width: 750px;
+      width: 650px;
       background-color: $light;
       padding: 50px 100px;
       box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+      overflow-y: auto;
+    }
+    .tabs__loader {
+      width: 100%;
+      height: 100%;
+      @include u-flex;
+      img {
+        width: 10%;
+        animation: rotate 1.5s linear infinite;
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsive
+@include tablet() {
+  .tabs {
+    .tabs__wrapper {
+      @include u-flex(column, center, center);
+      .tabs__box {
+        @include u-flex(row, space-between, center);
+        .tab {
+          width: calc(100% / 3);
+          margin: 0 2px;
+          padding: 0 40px;
+        }
+      }
+      .tabs__show {
+        width: 80%;
+      }
+    }
+  }
+}
+@include mobile() {
+  .tabs {
+    .tabs__wrapper {
+      @include u-flex(column, center, center);
+      .tabs__box {
+        @include u-flex(row, space-between, center);
+        flex-wrap: wrap;
+        padding-top: 30px;
+        .tab {
+          width: 100%;
+          margin: 1px 0;
+          padding: 0 40px;
+        }
+      }
+      .tabs__show {
+        margin: 30px 0;
+        width: 80%;
+        padding: 30px;
+      }
+    }
+  }
+}
+
+@include small-mobile() {
+  .tabs {
+    .tabs__wrapper {
+      @include u-flex(column, center, center);
+      .tabs__box {
+        @include u-flex(row, space-between, center);
+        flex-wrap: wrap;
+        padding-top: 30px;
+        .tab {
+          width: 100%;
+          margin: 1px 0;
+          padding: 0 40px;
+        }
+      }
+      .tabs__show {
+        margin: 30px 0;
+        width: 80%;
+        padding: 30px;
+      }
     }
   }
 }

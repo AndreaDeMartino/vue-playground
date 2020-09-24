@@ -147,11 +147,10 @@ export default {
   }
   .fade-enter-active,
   .fade-leave-active {
-    transition: filter 1s, opacity 1s;
+    transition: opacity 1s;
   }
   .fade-enter,
   .fade-leave-to {
-    filter: grayscale(100%);
     opacity: 0;
   }
   @include mobile {
