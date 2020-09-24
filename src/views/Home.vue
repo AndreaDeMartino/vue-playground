@@ -1,7 +1,7 @@
 <template>
 <div class="home">
   <app-header></app-header>
-  <div class="section"></div>
+  <app-main></app-main>
 </div>
 
   
@@ -10,11 +10,13 @@
 <script>
 // Components
 import Header from "../components/shared/Header.vue";
+import Main from "../components/shared/Main.vue";
 
 
 export default {
   components: {
     appHeader: Header,
+    appMain: Main,
   },
 };
 </script>
