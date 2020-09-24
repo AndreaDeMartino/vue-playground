@@ -62,7 +62,9 @@ export default {
     cursor: pointer;
     overflow: hidden;
     @include u-flex;
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
       .button--effect {
         position: absolute;
         bottom: 0;

@@ -1,22 +1,65 @@
 <template>
-  <section class="cards u-pt--15">
-    <div class="u-container">
-      <app-card
-        v-for="(info, index) in cardInfo"
-        :key="index"
-        :info="info"
-      ></app-card>
-    </div>
-  </section>
+  <main>
+    <!-- CARDS -->
+    <section class="cards u-pt--15">
+      <div class="u-container">
+        <app-card
+          v-for="(info, index) in cardInfo"
+          :key="index"
+          :info="info"
+        ></app-card>
+      </div>
+    </section>
+
+    <!-- WE ARE -->
+    <section class="we-are">
+      <app-banner :darkTheme="true">
+        <template slot="title">
+          we <br />
+          are.
+        </template>
+        <template slot="button">
+          THE PLAYERS
+        </template>
+      </app-banner>
+    </section>
+
+    <!-- WE DO -->
+    <section class="we-do">
+      <app-banner :darkTheme="false">
+        <template slot="title">
+          we <br />
+          do.
+        </template>
+        <template slot="button">
+          THE PROJECTS
+        </template>
+      </app-banner>
+    </section>
+
+    <!-- CAREERS -->
+    <section class="careers">
+      <app-banner :darkTheme="true">
+        <template slot="title">
+          careers
+        </template>
+        <template slot="button">
+          THE POSITIONS
+        </template>
+      </app-banner>
+    </section>
+  </main>
 </template>
 
 <script>
 // Components
 import Card from "../Card.vue";
+import Banner from "../Banner.vue";
 
 export default {
   components: {
     appCard: Card,
+    appBanner: Banner,
   },
   data() {
     return {
@@ -61,5 +104,32 @@ export default {
     @include u-flex;
     flex-wrap: wrap;
   }
+}
+
+.we-are {
+  height: 600px;
+  width: 100%;
+  background-image: url("../../assets/images/banner-we-are.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.we-do {
+  height: 600px;
+  width: 100%;
+  background-image: url("../../assets/images/banner-we-do.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.careers {
+  height: 600px;
+  width: 100%;
+  background-image: url("../../assets/images/banner-carrers.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>
