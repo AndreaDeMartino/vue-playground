@@ -1,8 +1,11 @@
 <template>
   <div class="u-row">
     <!-- Check on Theme -->
-    <div class="banner" :class="[darkTheme ? BannerDark : BannerLight]">
-
+    <div
+      class="banner"
+      :class="[darkTheme ? BannerDark : BannerLight]"
+      id="responsive"
+    >
       <h2 class="banner__title u-mb--30">
         <slot name="title"></slot>
       </h2>
@@ -10,7 +13,7 @@
       <p class="banner__sub-title">
         Consectetur adipiscing elit.
       </p>
-      
+
       <p class="banner__sub-title u-pt--10 u-pb--35">
         Nulla condimentum tortor sem,
       </p>
@@ -18,7 +21,6 @@
       <div class="banner__button u-text--center">
         <slot name="button"></slot>
       </div>
-
     </div>
   </div>
 </template>
@@ -98,7 +100,7 @@ export default {
       color: $light;
     }
   }
-    // Banner Light Style
+  // Banner Light Style
   .banner.light-mode {
     background-color: $light;
     .banner__button {
@@ -126,11 +128,22 @@ export default {
       background-color: black;
       opacity: 0.6;
     }
-    .banner {
+    #responsive {
       background-color: transparent;
       z-index: 5;
       padding-left: 0;
       @include u-flex(column);
+      .banner__button {
+        color: $light;
+        border: 1px solid $light;
+      }
+      .banner__title {
+        font-size: 50px;
+        color: $light;
+      }
+      .banner__sub-title {
+        color: $light;
+      }
     }
   }
 }
@@ -148,11 +161,22 @@ export default {
       background-color: black;
       opacity: 0.6;
     }
-    .banner {
+    #responsive {
       background-color: transparent;
       z-index: 5;
       padding-left: 0;
       @include u-flex(column);
+      .banner__button {
+        color: $light;
+        border: 1px solid $light;
+      }
+      .banner__title {
+        font-size: 50px;
+        color: $light;
+      }
+      .banner__sub-title {
+        color: $light;
+      }
     }
   }
 }
@@ -170,11 +194,22 @@ export default {
       background-color: black;
       opacity: 0.6;
     }
-    .banner {
+    #responsive {
       background-color: transparent;
       z-index: 5;
       padding-left: 0;
       @include u-flex(column);
+      .banner__button {
+        color: $light;
+        border: 1px solid $light;
+      }
+      .banner__title {
+        font-size: 50px;
+        color: $light;
+      }
+      .banner__sub-title {
+        color: $light;
+      }
     }
   }
 }
