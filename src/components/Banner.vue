@@ -72,7 +72,7 @@ export default {
   width: 100%;
   .banner {
     height: 100%;
-    padding-left: 100px;
+    padding-left: 80px;
     @include u-flex(column, center, flex-start);
     &__sub-title {
       font-size: 14px;
@@ -84,6 +84,8 @@ export default {
       letter-spacing: 0.2em;
       padding: 15px 25px;
       max-width: 250px;
+      transition: color 0.3s linear, box-shadow 0.3s linear, background-color 0.3s linear;
+      cursor: pointer;
     }
   }
   // Banner Dark Style
@@ -99,6 +101,10 @@ export default {
     .banner__sub-title {
       color: $light;
     }
+    .banner__button:hover {
+      background-color: $led;
+      box-shadow: 0 0 5px $led, 0 0 10px $led, 0 0 20px $led, 0 0 30px $led;
+    }
   }
   // Banner Light Style
   .banner.light-mode {
@@ -109,6 +115,9 @@ export default {
     }
     .banner__sub-title {
       color: $dark;
+    }
+    .banner__button:hover {
+      color: $led;  
     }
   }
 }
@@ -138,7 +147,6 @@ export default {
         border: 1px solid $light;
       }
       .banner__title {
-        font-size: 50px;
         color: $light;
       }
       .banner__sub-title {
