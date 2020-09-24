@@ -48,6 +48,11 @@
         </template>
       </app-banner>
     </section>
+
+    <!-- CAREERS -->
+    <section class="tabs">
+      <app-tab></app-tab>
+    </section>
   </main>
 </template>
 
@@ -55,11 +60,13 @@
 // Components
 import Card from "../Card.vue";
 import Banner from "../Banner.vue";
+import Tab from "../Tab.vue";
 
 export default {
   components: {
     appCard: Card,
     appBanner: Banner,
+    appTab: Tab,
   },
   data() {
     return {

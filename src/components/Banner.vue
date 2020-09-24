@@ -1,10 +1,9 @@
 <template>
   <div class="u-row">
     <!-- Check on Theme -->
-    <div
-      class="banner"
-      :class="[darkTheme ? BannerDark : BannerLight]"
-      id="responsive"
+    <div class="banner"
+        :class="[darkTheme ? BannerDark : BannerLight]"
+        id="responsive"
     >
       <h2 class="banner__title u-mb--30">
         <slot name="title"></slot>
@@ -84,7 +83,8 @@ export default {
       letter-spacing: 0.2em;
       padding: 15px 25px;
       max-width: 250px;
-      transition: color 0.3s linear, box-shadow 0.3s linear, background-color 0.3s linear;
+      transition: color 0.3s linear, box-shadow 0.3s linear,
+        background-color 0.3s linear;
       cursor: pointer;
     }
   }
@@ -102,8 +102,9 @@ export default {
       color: $light;
     }
     .banner__button:hover {
-      background-color: $led;
-      box-shadow: 0 0 5px $led, 0 0 10px $led, 0 0 20px $led, 0 0 30px $led;
+      background-color: $flash;
+      box-shadow: 0 0 5px $flash, 0 0 10px $flash, 0 0 20px $flash,
+        0 0 30px $flash;
     }
   }
   // Banner Light Style
@@ -117,7 +118,7 @@ export default {
       color: $dark;
     }
     .banner__button:hover {
-      color: $led;  
+      color: $flash;
     }
   }
 }
@@ -145,6 +146,11 @@ export default {
       .banner__button {
         color: $light;
         border: 1px solid $light;
+        &:hover {
+          background-color: $flash;
+          box-shadow: 0 0 5px $flash, 0 0 10px $flash, 0 0 20px $flash,
+            0 0 30px $flash;
+        }
       }
       .banner__title {
         color: $light;
@@ -177,6 +183,11 @@ export default {
       .banner__button {
         color: $light;
         border: 1px solid $light;
+        &:hover {
+          background-color: $flash;
+          box-shadow: 0 0 5px $flash, 0 0 10px $flash, 0 0 20px $flash,
+            0 0 30px $flash;
+        }
       }
       .banner__title {
         font-size: 50px;
@@ -210,6 +221,11 @@ export default {
       .banner__button {
         color: $light;
         border: 1px solid $light;
+        &:hover {
+          background-color: $flash;
+          box-shadow: 0 0 5px $flash, 0 0 10px $flash, 0 0 20px $flash,
+            0 0 30px $flash;
+        }
       }
       .banner__title {
         font-size: 50px;
