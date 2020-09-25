@@ -13,7 +13,7 @@
         </p>
       </div>
 
-      <div class="contact__form u-ml--10 u-mr--10">
+      <form class="contact__form u-ml--10 u-mr--10">
         <div class="u-row">
           <div
             class="name u-col__xs--12 u-col__sm--12 u-col__md--5 u-col__lg--5 u-col__xl--5 u-mt--10 u-mb--10"
@@ -70,11 +70,11 @@
         </div>
 
         <div class="u-row">
-          <div class="button">
+          <button class="button">
             <span>SEND <i class="fas fa-chevron-right"></i></span>
-          </div>
+          </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </template>
@@ -165,7 +165,6 @@ export default {
         background-color: $dark;
         color: $light;
         padding: 10px;
-        letter-spacing: 0.1rem;
         outline: none;
         resize: none;
       }
@@ -176,6 +175,7 @@ export default {
         margin: 8px 0 50px 0;
         padding: 14px;
         font-family: "gotham-medium";
+        border: none;
         @include u-flex;
         margin-top: 10px;
         cursor: pointer;
