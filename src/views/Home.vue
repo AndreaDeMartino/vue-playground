@@ -29,4 +29,14 @@ export default {
   position: relative;
   width: 100%;
 }
+
+.home {
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.home::-webkit-scrollbar {
+  display: none;
+}
+
 </style>

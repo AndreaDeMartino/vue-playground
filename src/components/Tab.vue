@@ -32,15 +32,19 @@
       </div>
 
       <div class="tabs__show">
-        <template v-if="loader">
-          <div class="tabs__loader">
+        <transition name="fade">
+          <div class="tabs__loader" v-if="loader">
             <img src="../assets/images/loader.png" alt="loader" />
           </div>
-        </template>
+        </transition>
 
-        <span v-else v-for="(data, index) in tabData" :key="index">
-          <span> {{ data }}</span>
-        </span>
+        <transition name="fade">
+          <div v-if="!loader" class="show__area">
+            <span v-for="(data, index) in tabData" :key="index">
+              {{ data }}
+            </span>
+          </div>
+        </transition>
       </div>
     </div>
   </div>
@@ -68,12 +72,12 @@ export default {
           this.loader = false;
         })
         .catch((err) => {
+          this.tabData =
+            "Dont-Forget-to-launch-json-server-command";
           // Remember after 3 seconds to launch json-server command if it hasn't already been done
           setTimeout(() => {
-            this.tabData =
-              "**DevAlert** PLEASE - LAUNCH - THIS - COMMAND: json-server --watch tabs.json ";
             this.loader = false;
-          }, 3000);
+          }, 2000);
         });
     },
   },
@@ -120,18 +124,23 @@ export default {
       padding: 50px 100px;
       box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
       overflow-y: auto;
-      span {
-        font-family: "gotham-medium";
-        font-size: 12px;
-        color: $light-text;
+      position: relative;
+      .show__area {
+        span {
+          font-family: "gotham-medium";
+          font-size: 12px;
+          color: $light-text;
+        }
       }
     }
     .tabs__loader {
-      width: 100%;
-      height: 100%;
-      @include u-flex;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       img {
-        width: 10%;
+        width: 50px;
+        height: 50px;
         animation: rotate 1.5s linear infinite;
       }
     }
@@ -143,6 +152,16 @@ export default {
   to {
     transform: rotate(360deg);
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 
 // Responsive

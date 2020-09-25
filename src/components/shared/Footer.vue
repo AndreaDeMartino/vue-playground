@@ -97,6 +97,9 @@ export default {};
       p {
         padding-right: 0;
         padding: 10px 0;
+        &:last-child {
+          margin-right: 80px;
+        }
       }
     }
   }
@@ -113,6 +116,9 @@ export default {};
       p {
         padding-right: 0;
         padding: 10px 0;
+        &:last-child {
+          margin-right: 80px;
+        }
       }
     }
   }
