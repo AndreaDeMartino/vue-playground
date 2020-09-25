@@ -26,7 +26,6 @@
       </div>
 
       <div class="tabs__show">
-
         <template v-if="loader">
           <div class="tabs__loader">
             <img src="../assets/images/loader.png" alt="loader" />
@@ -36,7 +35,6 @@
         <template v-else v-for="data in tabData">
           <span> {{ data }}</span>
         </template>
-        
       </div>
     </div>
   </div>
@@ -56,15 +54,21 @@ export default {
   methods: {
     getData(tab) {
       this.loader = true;
-
+      this.active = tab;
       axios
         .get("/tab" + tab)
         .then((res) => {
           this.tabData = res.data.content;
-          this.active = tab;
           this.loader = false;
         })
-        .catch((err) => (this.tabData = "Error"));
+        .catch((err) => {
+          // Remember after 3 seconds to launch json-server command if it hasn't already been done
+          setTimeout(() => {
+            this.tabData =
+              "PLEASE - LAUNCH - THIS - COMMAND --> json-server --watch tabs.json ";
+            this.loader = false;
+          }, 3000);
+        });
     },
   },
   mounted() {
