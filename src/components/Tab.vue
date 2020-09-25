@@ -32,9 +32,9 @@
           </div>
         </template>
 
-        <template v-else v-for="data in tabData">
+        <span v-else v-for="(data, index) in tabData" :key="index">
           <span> {{ data }}</span>
-        </template>
+        </span>
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@ export default {
           // Remember after 3 seconds to launch json-server command if it hasn't already been done
           setTimeout(() => {
             this.tabData =
-              "PLEASE - LAUNCH - THIS - COMMAND --> json-server --watch tabs.json ";
+              "**DevAlert** PLEASE - LAUNCH - THIS - COMMAND: json-server --watch tabs.json ";
             this.loader = false;
           }, 3000);
         });

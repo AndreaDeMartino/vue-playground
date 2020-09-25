@@ -53,6 +53,11 @@
     <section class="tabs">
       <app-tab></app-tab>
     </section>
+
+    <!-- CONTACT US -->
+    <section class="contact">
+      <app-form></app-form>
+    </section>
   </main>
 </template>
 
@@ -61,12 +66,14 @@
 import Card from "../Card.vue";
 import Banner from "../Banner.vue";
 import Tab from "../Tab.vue";
+import Form from "../Form.vue";
 
 export default {
   components: {
     appCard: Card,
     appBanner: Banner,
     appTab: Tab,
+    appForm: Form,
   },
   data() {
     return {
