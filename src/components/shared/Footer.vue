@@ -62,7 +62,7 @@ export default {};
       margin-top: 50px;
     }
     .footer__sections {
-      margin: 40px 0;
+      margin: 40px 0; 
       @include u-flex(column, center, center);
       p {
         padding-right: 0;
