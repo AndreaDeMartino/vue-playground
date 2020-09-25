@@ -32,9 +32,20 @@ export default {};
   left: 0;
   width: 100%;
   z-index: 10;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    box-shadow: 0 0.1px 3px rgba(255, 255, 255, 0.25);
+  }
   .navbar {
     @include u-flex(column, space-between, center);
-    padding: 20px 0;
+    padding: 15px;
     &__left {
       margin-bottom: 10px;
       .navbar__logo {
