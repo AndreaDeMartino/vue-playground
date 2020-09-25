@@ -134,13 +134,16 @@ export default {
         transition: border-color 0.3s linear;
         letter-spacing: 1px;
       }
+      label {
+        width: 100%;
+      }
       p {
         position: absolute;
         height: 12px;
         font-size: 12px;
         padding: 0 3px;
         top: calc(50% - 6px);
-        left: 3%;
+        left: 10px;
         color: $border;
         background-color: $dark;
         pointer-events: none;
@@ -154,14 +157,14 @@ export default {
       textarea.active {
         border: 1px solid $gold;
         box-shadow: 0px 2px 3px 0px #c59917;
-        outline: none;
       }
       textarea {
         width: 100%;
         background-color: $dark;
         color: $light;
-        padding: 6px;
+        padding: 10px;
         letter-spacing: 0.1rem;
+        outline: none;
       }
       .button {
         width: 30%;
@@ -187,11 +190,11 @@ export default {
 @keyframes inputMove {
   from {
     top: 0%;
-    left: 3%;
+    left: 10px;
   }
   to {
     top: -25%;
-    left: 2%;
+    left: 7px;
   }
 }
 </style>
