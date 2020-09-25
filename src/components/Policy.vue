@@ -33,6 +33,7 @@ export default {
   @include u-flex;
   &__text {
     font-size: 10px;
+    color: $light-text;
   }
   &__button {
     width: 100px;

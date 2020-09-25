@@ -19,7 +19,7 @@
           are.
         </template>
         <template slot="button">
-          THE PLAYERS
+          THE PLAYERS <i class="fas fa-chevron-right u-text--light"></i>
         </template>
       </app-banner>
     </section>
@@ -32,7 +32,7 @@
           do.
         </template>
         <template slot="button">
-          THE PROJECTS
+          THE PROJECTS <i class="fas fa-chevron-right u-text--dark"></i>
         </template>
       </app-banner>
     </section>
@@ -44,7 +44,7 @@
           careers
         </template>
         <template slot="button">
-          THE POSITIONS
+          THE POSITIONS <i class="fas fa-chevron-right u-text--light"></i>
         </template>
       </app-banner>
     </section>

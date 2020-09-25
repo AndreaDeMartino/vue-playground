@@ -50,8 +50,8 @@ li {
 /* == Neon == */
 @mixin u-led($color : $gold){
   cursor: pointer;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $gold,
-    0 0 30px $gold, 0 0 40px $gold, 0 0 55px $gold, 0 0 75px $gold,
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $color,
+    0 0 30px $color, 0 0 40px $color, 0 0 55px $color, 0 0 75px $color,
     2px 2px 1px rgba(206, 199, 37, 0);
 }
 

@@ -6,14 +6,14 @@
           contact <br />
           us.
         </h1>
-        <p class="u-text--light">
-          Playground srl Via G. Mazzini 3/C, Cernusco Sul Naviglio (Milano)
-          <br />-<br />
+        <p class="contact__subtext">
+          Playground srl <br />Via G. Mazzini 3/C, <br />
+          Cernusco Sul Naviglio (Milano) <br />-<br />
           T +39 0240706003
         </p>
       </div>
 
-      <div class="contact__form">
+      <div class="contact__form u-ml--10 u-mr--10">
         <div class="u-row">
           <div
             class="name u-col__xs--12 u-col__sm--12 u-col__md--5 u-col__lg--5 u-col__xl--5 u-mt--10 u-mb--10"
@@ -71,7 +71,7 @@
 
         <div class="u-row">
           <div class="button">
-            <span>SEND</span>
+            <span>SEND <i class="fas fa-chevron-right"></i></span>
           </div>
         </div>
       </div>
@@ -110,12 +110,14 @@ export default {
     flex-wrap: wrap;
     .contact__text {
       height: 350px;
-      p {
+      margin-right: 50px;
+      .contact__subtext {
         max-width: 50%;
+        color: $light;
       }
     }
     .contact__form {
-      height: 350px;
+      min-height: 350px;
       width: 600px;
       @include u-flex(column, center, normal);
       // border: 1px solid $light;
@@ -165,13 +167,14 @@ export default {
         padding: 10px;
         letter-spacing: 0.1rem;
         outline: none;
+        resize: none;
       }
       .button {
         width: 30%;
         background-color: $light;
         color: $dark;
-        margin-top: 8px;
-        padding: 10px;
+        margin: 8px 0 50px 0;
+        padding: 14px;
         font-family: "gotham-medium";
         @include u-flex;
         margin-top: 10px;
@@ -195,6 +198,26 @@ export default {
   to {
     top: -25%;
     left: 7px;
+  }
+}
+
+// Responsive
+
+@include mobile {
+  .contact {
+    .contact__text {
+      margin-bottom: 0;
+      margin: 20px;
+    }
+  }
+}
+
+@include small-mobile {
+  .contact {
+    .contact__text {
+      margin-bottom: 0;
+      margin: 20px;
+    }
   }
 }
 </style>

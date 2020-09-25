@@ -12,10 +12,42 @@
 
       <div class="navbar__right">
         <ul class="navbar__list">
-          <li class="navbar__item"><h4 :class="{'active' : actualPage == 'active'}" @click="actualPage = 'active'" v-scroll-to="'.we-are'">we are</h4></li>
-          <li class="navbar__item"><h4 :class="{'active' : actualPage == 'weDo'}" @click="actualPage = 'weDo'" v-scroll-to="'.we-do'">we do</h4></li>
-          <li class="navbar__item"><h4 :class="{'active' : actualPage == 'careers'}" @click="actualPage = 'careers'" v-scroll-to="'.careers'">careers</h4></li>
-          <li class="navbar__item"><h4 :class="{'active' : actualPage == 'contact'}" @click="actualPage = 'contact'" v-scroll-to="'.contact'">contact us</h4></li>
+          <li class="navbar__item">
+            <h4
+              :class="{ active: actualPage == 'active' }"
+              @click="actualPage = 'active'"
+              v-scroll-to="'.we-are'"
+            >
+              we are
+            </h4>
+          </li>
+          <li class="navbar__item">
+            <h4
+              :class="{ active: actualPage == 'weDo' }"
+              @click="actualPage = 'weDo'"
+              v-scroll-to="'.we-do'"
+            >
+              we do
+            </h4>
+          </li>
+          <li class="navbar__item">
+            <h4
+              :class="{ active: actualPage == 'careers' }"
+              @click="actualPage = 'careers'"
+              v-scroll-to="'.careers'"
+            >
+              careers
+            </h4>
+          </li>
+          <li class="navbar__item">
+            <h4
+              :class="{ active: actualPage == 'contact' }"
+              @click="actualPage = 'contact'"
+              v-scroll-to="'.contact'"
+            >
+              contact us
+            </h4>
+          </li>
         </ul>
       </div>
     </nav>
@@ -26,8 +58,8 @@
 export default {
   data() {
     return {
-      actualPage : '',
-    }
+      actualPage: "",
+    };
   },
 };
 </script>
@@ -70,7 +102,7 @@ export default {
           &:hover {
             @include u-led;
           }
-          &.active{
+          &.active {
             @include u-led;
           }
         }
@@ -80,23 +112,23 @@ export default {
   @include desktop {
     .navbar {
       flex-direction: row;
-    }
-    .navbar__left {
-      margin-bottom: 0;
-    }
-    .navbar__list {
-      @include u-list(20);
+      .navbar__left {
+        margin-bottom: 0;
+      }
+      .navbar__list {
+        @include u-list(20);
+      }
     }
   }
   @include large-desktop {
     .navbar {
       flex-direction: row;
-    }
-    .navbar__left {
-      margin-bottom: 0;
-    }
-    .navbar__list {
-      @include u-list(25);
+      .navbar__left {
+        margin-bottom: 0;
+      }
+      .navbar__list {
+        @include u-list(25);
+      }
     }
   }
 }

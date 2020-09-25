@@ -8,6 +8,8 @@
           @click="getData(1)"
         >
           Vestibulum at odio sit amet
+          <i v-if="active == 1" class="fas fa-chevron-down"></i>
+          <i v-else class="fas fa-chevron-up"></i>
         </div>
         <div
           class="tab"
@@ -15,6 +17,8 @@
           @click="getData(2)"
         >
           Sed vehicula neque
+          <i v-if="active == 2" class="fas fa-chevron-down"></i>
+          <i v-else class="fas fa-chevron-up"></i>
         </div>
         <div
           class="tab"
@@ -22,6 +26,8 @@
           @click="getData(3)"
         >
           Nulla id libero pretium
+          <i v-if="active == 3" class="fas fa-chevron-down"></i>
+          <i v-else class="fas fa-chevron-up"></i>
         </div>
       </div>
 
@@ -95,10 +101,16 @@ export default {
         transition: background-color 0.3s linear;
         @include u-flex;
         cursor: pointer;
+        i {
+          margin-left: 6px;
+        }
       }
       .tab--active {
         background-color: $dark;
         color: $light;
+        i {
+          color: $light;
+        }
       }
     }
     .tabs__show {
@@ -108,6 +120,11 @@ export default {
       padding: 50px 100px;
       box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
       overflow-y: auto;
+      span {
+        font-family: "gotham-medium";
+        font-size: 12px;
+        color: $light-text;
+      }
     }
     .tabs__loader {
       width: 100%;

@@ -4,14 +4,14 @@
       <img src="../../assets/images/logo-footer.png" alt="" />
     </div>
     <div class="footer__sections">
-      <p>we are</p>
-      <p>we do</p>
-      <p>we careers</p>
-      <p>we contact us</p>
+      <p v-scroll-to="'.we-are'">we are</p>
+      <p v-scroll-to="'.we-do'">we do</p>
+      <p v-scroll-to="'.careers'">careers</p>
+      <p v-scroll-to="'.contact'">contact us</p>
     </div>
-    <div class="footer__icons">
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-facebook-f"></i>
+    <div class="footer__icons u-mb--5">
+      <i class="fab fa-facebook-square"></i>
+      <i class="fab fa-linkedin-in"></i>
       <i class="fab fa-instagram"></i>
     </div>
   </footer>
@@ -26,6 +26,7 @@ export default {};
   min-height: 350px;
   width: 100%;
   background-color: $dark;
+  border-top: 1px solid $border;
   @include u-flex(column, center, center);
   &__logo {
     img {
@@ -38,31 +39,60 @@ export default {};
     margin: 60px 0;
     p {
       color: $light;
-      padding-right: 100px;
+      margin-right: 100px;
       white-space: nowrap;
+      position: relative;
+      transition: color 0.6s linear;
+      cursor: pointer;
       &:last-child {
-        padding-right: 0;
+        margin-right: 0;
+      }
+      &:hover {
+        color: $gold;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          height: 1px;
+          width: 150%;
+          background: linear-gradient(90deg, transparent, $gold);
+          animation: button-animate 1.5s forwards;
+        }
       }
     }
   }
   &__icons {
     i {
-      color: $light;
+      color: $icons;
       padding: 10px;
       font-size: 20px;
+      &:hover {
+        @include u-led($light);
+        cursor: pointer;
+      }
     }
   }
 }
 
-//Responsive
+//Animation
+@keyframes button-animate {
+  0% {
+    left: -150%;
+  }
 
+  100% {
+    left: 0%;
+  }
+}
+
+//Responsive
 @include mobile {
   footer {
     .footer__logo {
       margin-top: 50px;
     }
     .footer__sections {
-      margin: 40px 0; 
+      margin: 40px 0;
       @include u-flex(column, center, center);
       p {
         padding-right: 0;
