@@ -6,6 +6,9 @@ import axios from "axios";
 const VueScrollTo = require("vue-scrollto");
 Vue.use(VueScrollTo);
 
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
+
 axios.defaults.baseURL = "http://localhost:3000";
 
 Vue.config.productionTip = false;
