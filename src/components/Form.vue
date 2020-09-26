@@ -1,11 +1,7 @@
 <template>
   <div class="contact" :class="{ sent: formValidate }">
-    <transition name="fade">
-      <h4 class="sent__message" v-if="formValidate">
-        MESSAGE SENT
-      </h4>
-    </transition>
     <div class="contact__wrapper u-container">
+      <!-- Contact Title -->
       <div class="contact__text">
         <h2
           class="u-text--light u-mb--30"
@@ -27,7 +23,9 @@
         </p>
       </div>
 
+      <!-- Contact Form -->
       <form class="contact__form u-ml--10 u-mr--10">
+        <!-- Name -->
         <div class="u-row">
           <div
             class="name u-col__xs--12 u-col__sm--12 u-col__md--5 u-col__lg--5 u-col__xl--5 u-mt--10 u-mb--10"
@@ -46,6 +44,7 @@
             </label>
           </div>
 
+          <!-- Last Name -->
           <div
             class="lastname u-col__xs--12 u-col__sm--12 u-col__md--6 u-col__lg--6 u-col__xl--6 u-offset__md--1 u-offset__lg--1 u-offset__xl--1 u-mt--10 u-mb--10"
           >
@@ -67,6 +66,7 @@
           </div>
         </div>
 
+        <!-- Email -->
         <div class="u-row u-mt--15 u-mb--20">
           <label class="email">
             <input
@@ -85,6 +85,7 @@
           </label>
         </div>
 
+        <!-- Message -->
         <div class="validation__area u-row u-mb--10">
           <textarea
             name="message"
@@ -104,6 +105,7 @@
           >
         </div>
 
+        <!-- Subtmit Button -->
         <div class="u-row">
           <button
             @click.prevent="formValidate = true"
@@ -121,11 +123,18 @@
         </div>
       </form>
     </div>
+
+    <!-- Alert Message Was Sent -->
+    <transition name="fade">
+      <h4 class="sent__message" v-if="formValidate">
+        MESSAGE SENT
+      </h4>
+    </transition>
   </div>
 </template>
 
 <script>
-// Validation
+// Validation list
 import { required, minLength, email } from "vuelidate/lib/validators";
 
 export default {
@@ -143,6 +152,7 @@ export default {
     };
   },
   watch: {
+    // Reset Form
     formValidate: function() {
       this.name = "";
       this.lastname = "";
@@ -188,7 +198,7 @@ export default {
     width: 100%;
     @include u-flex;
     color: $gold;
-    font-family: 'gotham-medium';
+    font-family: "gotham-medium";
     letter-spacing: 0.1em;
     text-shadow: 1px 1px 3px rgba(219, 206, 87, 0.5);
     opacity: 0;
@@ -324,52 +334,10 @@ export default {
     animation: sentMessage 3s linear;
   }
 }
-//Animations
-@keyframes inputMove {
-  from {
-    top: 0%;
-    left: 10px;
-  }
-  to {
-    top: -25%;
-    left: 7px;
-  }
-}
 
-@keyframes sentMessage {
-  0% {
-    left: -100%;
-  }
-
-  100% {
-    left: 200%;
-  }
-}
-
-@keyframes display {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacirt: 0;
-  }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 1s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-// Responsive
+/****************************************************
+  * Responsive
+  ****************************************************/
 
 @include mobile {
   .contact {

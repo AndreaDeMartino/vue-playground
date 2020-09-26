@@ -56,6 +56,83 @@ li {
 }
 
 
+/* == Vue Fade Transition == */
+.fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 1s;
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+/* == Animation from right to left == */
+@keyframes button-animate {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+/* == Animation for bottoms led == */
+@keyframes bottom-animate {
+  0% {
+    left: -150%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+/* == Rotation == */
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* == Input Text Animation for forms == */
+@keyframes inputMove {
+  from {
+    top: 0%;
+    left: 10px;
+  }
+  to {
+    top: -25%;
+    left: 7px;
+  }
+}
+
+/* == Animation to Alert Sent Message == */
+@keyframes sentMessage {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 200%;
+  }
+}
+
+/* == Animation Fade with Opacity  == */
+@keyframes display {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacirt: 0;
+  }
+}
+
 /* SPACING
    ============================= */
 

@@ -1,29 +1,37 @@
+/* IMPORTS
+   ============================= */
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import inViewportDirective from "vue-in-viewport-directive";
 import axios from "axios";
-import inViewportDirective from 'vue-in-viewport-directive'
-inViewportDirective.defaults.margin = '-40% 0%'
 
-// Vue Scroll
+/* PLUGINS AND TOOLS
+   ============================= */
+
+/* == Vue Scroll == */
 const VueScrollTo = require("vue-scrollto");
 Vue.use(VueScrollTo);
 
-// VueValidate
-import Vuelidate from 'vuelidate'
-Vue.use(Vuelidate)
+/* == Vue Validate == */
+import Vuelidate from "vuelidate";
+Vue.use(Vuelidate);
 
-//Vue Viewport
-Vue.directive('in-viewport', inViewportDirective)
+/* == Vue ViewPort == */
+Vue.directive("in-viewport", inViewportDirective);
+inViewportDirective.defaults.margin = "-40% 0%";
 
-// Axios
+/* == Axios == */
 axios.defaults.baseURL = "http://localhost:3000";
 
-// Event Bus
+/* == Event Bus == */
 export const eventBus = new Vue();
 
 
+/* VUE INSTANCE
+   ============================= */
 
+/* == Config == */
 Vue.config.productionTip = false;
 
 new Vue({

@@ -49,7 +49,7 @@
       </app-banner>
     </section>
 
-    <!-- CAREERS -->
+    <!-- TABS -->
     <section class="tabs">
       <app-tab></app-tab>
     </section>
@@ -94,7 +94,6 @@ export default {
           img: this.innovation(),
         },
       ],
-      check: '',
     };
   },
   methods: {

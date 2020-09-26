@@ -1,8 +1,11 @@
 <template>
   <footer class="footer">
+    <!-- Footer Logo -->
     <div class="footer__logo">
       <img src="../../assets/images/logo-footer.png" alt="" />
     </div>
+
+    <!-- Footer Sections -->
     <div class="footer__sections">
       <p
         v-scroll-to="{
@@ -18,7 +21,7 @@
         v-scroll-to="{
           el: '.we-do',
           onStart: function(element) {
-           editAge('weDo');
+            editAge('weDo');
           },
         }"
       >
@@ -45,6 +48,8 @@
         contact us
       </p>
     </div>
+
+    <!-- Footer socials -->
     <div class="footer__icons u-mb--5">
       <i class="fab fa-facebook-square"></i>
       <i class="fab fa-linkedin-in"></i>
@@ -54,14 +59,14 @@
 </template>
 
 <script>
-// Event Bus to get the actual Page
+// Event Bus to get the actual Page from Navbar
 import { eventBus } from "../../main.js";
 
 export default {
   data() {
     return {
       actualPage: "",
-    }
+    };
   },
   methods: {
     editAge(page) {
@@ -86,8 +91,8 @@ export default {
   }
   &__sections {
     max-width: 450px;
-    @include u-flex();
     margin: 60px 0;
+    @include u-flex();
     p {
       color: $light;
       margin-right: 100px;
@@ -107,7 +112,7 @@ export default {
           height: 1px;
           width: 150%;
           background: linear-gradient(90deg, transparent, $gold);
-          animation: button-animate 1.5s forwards;
+          animation: bottom-animate 1.5s forwards;
         }
       }
     }
@@ -125,18 +130,10 @@ export default {
   }
 }
 
-//Animation
-@keyframes button-animate {
-  0% {
-    left: -150%;
-  }
+/****************************************************
+  * RESPONSIVE
+  ****************************************************/
 
-  100% {
-    left: 0%;
-  }
-}
-
-//Responsive
 @include mobile {
   footer {
     .footer__logo {

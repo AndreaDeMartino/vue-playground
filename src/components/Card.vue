@@ -1,15 +1,18 @@
 <template>
   <div class="card">
+    <!-- Card Image -->
     <div class="card__image">
       <img :src="info.img" alt="card-logo" />
     </div>
 
+    <!-- Card Content -->
     <div class="card__content">
       <p class="card__text u-text--center">
         {{ info.text }}
       </p>
     </div>
 
+    <!-- Card Button -->
     <div class="card__button">
       <h4 class="button__text">READ MORE</h4>
       <span class="button--effect"></span>
@@ -19,24 +22,22 @@
 
 <script>
 export default {
+  // The images and text of the card are added by this props
   props: {
     info: {
       type: Object,
       required: true,
     },
   },
-  data() {
-    return {};
-  },
 };
 </script>
 
 <style lang="scss" scoped>
 .card {
-  background-color: $light;
   height: 350px;
   width: 350px;
   margin: 15px;
+  background-color: $light;
   @include u-flex(column);
   &__image img {
     height: 100px;
@@ -48,9 +49,9 @@ export default {
     width: 100%;
     @include u-flex();
     .card__text {
+      max-height: 90%;
       padding: 0 50px;
       font-size: 16px;
-      max-height: 90%;
       overflow-y: auto;
     }
   }
@@ -86,17 +87,6 @@ export default {
       color: $light;
       transition: color 0.7s ease-in, text-shadow 0.7s linear;
     }
-  }
-}
-
-//KeyFrames
-@keyframes button-animate {
-  0% {
-    left: 100%;
-  }
-
-  100% {
-    left: -100%;
   }
 }
 </style>

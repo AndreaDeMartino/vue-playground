@@ -2,6 +2,7 @@
   <div class="tabs">
     <div class="tabs__wrapper">
       <div class="tabs__box">
+        <!-- First Tab -->
         <div
           class="tab"
           :class="{ 'tab--active': active == 1 }"
@@ -11,6 +12,8 @@
           <i v-if="active == 1" class="fas fa-chevron-down"></i>
           <i v-else class="fas fa-chevron-up"></i>
         </div>
+
+        <!-- Second Tab -->
         <div
           class="tab"
           :class="{ 'tab--active': active == 2 }"
@@ -20,6 +23,8 @@
           <i v-if="active == 2" class="fas fa-chevron-down"></i>
           <i v-else class="fas fa-chevron-up"></i>
         </div>
+
+        <!-- Third tab -->
         <div
           class="tab"
           :class="{ 'tab--active': active == 3 }"
@@ -31,6 +36,7 @@
         </div>
       </div>
 
+      <!-- Tabs Show Box -->
       <div class="tabs__show">
         <transition name="fade">
           <div class="tabs__loader" v-if="loader">
@@ -51,6 +57,7 @@
 </template>
 
 <script>
+// Import Axios
 import axios from "axios";
 
 export default {
@@ -148,24 +155,10 @@ export default {
   }
 }
 
-// Animations
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
+/****************************************************
+  * Responsive
+  ****************************************************/
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-// Responsive
 @include tablet() {
   .tabs {
     .tabs__wrapper {
@@ -184,6 +177,7 @@ export default {
     }
   }
 }
+
 @include mobile() {
   .tabs {
     .tabs__wrapper {

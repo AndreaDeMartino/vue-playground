@@ -1,13 +1,15 @@
 <template>
-  <div class="policy" v-if="toggle">
-    <p class="policy__text u-mr--20 u-text--center">
-      Our website uses cookies to improve your experience. To find out more
-      about the cookies we use please see our Cookies Policy.
-    </p>
-    <div class="policy__button" @click="toggle = !toggle">
-      <span class="u-text--light">OK</span>
+  <transition name="fade">
+    <div class="policy" v-if="toggle">
+      <p class="policy__text u-mr--20 u-text--center">
+        Our website uses cookies to improve your experience. To find out more
+        about the cookies we use please see our Cookies Policy.
+      </p>
+      <div class="policy__button" @click="toggle = !toggle">
+        <span class="u-text--light">OK</span>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -49,7 +51,9 @@ export default {
   }
 }
 
-//Responsive
+/****************************************************
+  * Responsive
+  ****************************************************/
 
 @include mobile {
   .policy {

@@ -5,7 +5,7 @@
       <img
         class="slider__image"
         src="../assets/images/slide-hello.jpg"
-        :alt="backgrounds[actualBg - 1]"
+        alt="slider-hello"
         v-if="actualBg == 1"
       />
     </transition>
@@ -13,7 +13,7 @@
       <img
         class="slider__image"
         src="../assets/images/slide-play.jpg"
-        :alt="backgrounds[actualBg - 1]"
+        alt="slider-play"
         v-if="actualBg == 2"
       />
     </transition>
@@ -21,10 +21,11 @@
       <img
         class="slider__image"
         src="../assets/images/slide-circle.jpg"
-        :alt="backgrounds[actualBg - 1]"
+        alt="slider-circle"
         v-if="actualBg == 3"
       />
     </transition>
+
     <!-- Slider Text -->
     <div class="slider__text">
       <h1 class="u-text--light u-mb--30">
@@ -43,10 +44,16 @@
     </div>
 
     <!-- Slider Buttons -->
-    <i class="slider__left fas fa-chevron-left" @click.prevent="sliderLeft()"></i>
-    <i class="slider__right fas fa-chevron-right" @click.prevent="sliderRight()"></i>
+    <i
+      class="slider__left fas fa-chevron-left"
+      @click.prevent="sliderLeft()"
+    ></i>
+    <i
+      class="slider__right fas fa-chevron-right"
+      @click.prevent="sliderRight()"
+    ></i>
 
-    <!-- Slider Selector -->
+    <!-- Slider Bottom Selector -->
     <ul class="slider__selector">
       <li v-for="(background, index) in backgrounds" :key="background">
         <i
@@ -80,7 +87,7 @@ export default {
     },
   },
   mounted() {
-    setInterval(() => this.sliderRight(), 4000);
+    setInterval(() => this.sliderRight(), 4500);
   },
 };
 </script>
@@ -145,35 +152,32 @@ export default {
       @include u-led;
     }
   }
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 1s;
-  }
-  .fade-enter,
-  .fade-leave-to {
-    opacity: 0;
-  }
-  @include mobile {
-    .slider {
-      &__text {
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-      &__image  {
-        filter: blur(2px);
-      }
-    }
-  }
-  @include small-mobile {
-    .slider {
-      &__text {
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+}
+
+/****************************************************
+  * Responsive
+  ****************************************************/
+
+@include mobile {
+  .slider {
+    &__text {
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     .slider__image {
       filter: blur(2px);
     }
+  }
+}
+@include small-mobile {
+  .slider {
+    &__text {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .slider__image {
+    filter: blur(2px);
   }
 }
 </style>

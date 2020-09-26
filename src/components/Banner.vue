@@ -1,6 +1,6 @@
 <template>
   <div class="u-row">
-    <!-- Check on Theme -->
+    <!-- Check on Theme Setup (Dark or Light)-->
     <div
       class="banner"
       :class="[darkTheme ? BannerDark : BannerLight]"
@@ -8,6 +8,7 @@
     >
       <div class="banner__wrapper u-text--center" v-in-viewport>
         <h2 class="banner__title u-mb--30">
+          <!-- Dynamic Title -->
           <slot name="title"></slot>
         </h2>
 
@@ -20,6 +21,7 @@
         </p>
 
         <div class="banner__button u-text--center">
+          <!-- Dynamic Button -->
           <slot name="button"></slot>
         </div>
       </div>
@@ -29,15 +31,15 @@
 
 <script>
 export default {
+  // Theme are managed by this props (if darkTheme = false the theme will be Light)
   props: {
-    // Theme
     darkTheme: {
       type: Boolean,
     },
   },
   data() {
     return {
-      // Dark Theme on rx grid config
+      // Dark Theme Grid Classes Configuration
       BannerDark: [
         "dark-mode",
         "u-col__xs--4",
@@ -51,7 +53,7 @@ export default {
         "u-col__xl--4",
         "u-offset__xl--8",
       ],
-      // Light Theme on lx grid config
+      // Light Theme Grid Classes Configuration
       BannerLight: [
         "light-mode",
         "u-col__xs--4",
@@ -79,15 +81,15 @@ export default {
     padding-left: 100px;
     @include u-flex(column, center, flex-start);
     &__sub-title {
+      max-width: 220px;
       font-size: 14px;
       letter-spacing: 0.1em;
-      max-width: 220px;
     }
     &__button {
+      max-width: 250px;
+      padding: 15px 25px;
       font-size: 14px;
       letter-spacing: 0.2em;
-      padding: 15px 25px;
-      max-width: 250px;
       transition: color 0.3s linear, box-shadow 0.3s linear,
         background-color 0.3s linear;
       cursor: pointer;
@@ -147,7 +149,9 @@ export default {
   }
 }
 
-// Responsive
+/****************************************************
+  * Responsive
+  ****************************************************/
 
 @include tablet {
   .u-row {
@@ -167,6 +171,13 @@ export default {
       z-index: 5;
       padding-left: 0;
       @include u-flex(column);
+      .banner__wrapper {
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 0;
+        transform: none;
+      }
       .banner__button {
         color: $light;
         border: 1px solid $light;
@@ -174,6 +185,9 @@ export default {
           background-color: $flash;
           box-shadow: 0 0 5px $flash, 0 0 10px $flash, 0 0 20px $flash,
             0 0 30px $flash;
+        }
+        i {
+          color: $light;
         }
       }
       .banner__title {
@@ -186,17 +200,6 @@ export default {
   }
 }
 
-@include tablet {
-  #responsive {
-    .banner__wrapper {
-      padding-right: 0;
-      padding-left: 0;
-      margin-right: 0;
-      margin-left: 0;
-      transform: none;
-    }
-  }
-}
 @include mobile {
   .u-row {
     position: relative;
@@ -229,6 +232,9 @@ export default {
           background-color: $flash;
           box-shadow: 0 0 5px $flash, 0 0 10px $flash, 0 0 20px $flash,
             0 0 30px $flash;
+        }
+        i {
+          color: $light;
         }
       }
       .banner__title {
@@ -275,6 +281,9 @@ export default {
           box-shadow: 0 0 5px $flash, 0 0 10px $flash, 0 0 20px $flash,
             0 0 30px $flash;
         }
+        i {
+          color: $light;
+        }
       }
       .banner__title {
         font-size: 40px;
@@ -283,17 +292,6 @@ export default {
       .banner__sub-title {
         color: $light;
       }
-    }
-  }
-
-  //Animation
-  @keyframes move-right {
-    0% {
-      width: 70px;
-    }
-
-    100% {
-      width: 100px;
     }
   }
 }

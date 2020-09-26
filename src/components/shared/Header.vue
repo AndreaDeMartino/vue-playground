@@ -1,6 +1,8 @@
 <template>
   <header>
+    <!-- Navbar -->
     <app-navbar></app-navbar>
+    <!-- Slider -->
     <app-slider></app-slider>
   </header>
 </template>

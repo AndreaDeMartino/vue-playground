@@ -1,6 +1,7 @@
 <template>
   <div class="navbar__wrapper">
     <nav class="navbar u-container">
+      <!-- Nav left side -->
       <div class="navbar__left">
         <img
           class="navbar__logo"
@@ -10,6 +11,7 @@
         />
       </div>
 
+      <!-- Nav Right side -->
       <div class="navbar__right">
         <ul class="navbar__list">
           <li class="navbar__item">
@@ -71,7 +73,7 @@
 </template>
 
 <script>
-// Event Bus to get the actual Page
+// Event Bus to get the actual Page from footer
 import { eventBus } from "../main.js";
 
 export default {
@@ -123,7 +125,6 @@ export default {
           color: $light;
           font-weight: 300;
           letter-spacing: 0.1em;
-
           &:hover {
             @include u-led;
           }
@@ -131,9 +132,14 @@ export default {
       }
     }
   }
+}
 
-  // Responsive
-  @include desktop {
+/****************************************************
+  * Responsive
+  ****************************************************/
+
+@include desktop {
+  .navbar__wrapper {
     .navbar {
       flex-direction: row;
       .navbar__left {
@@ -144,7 +150,10 @@ export default {
       }
     }
   }
-  @include large-desktop {
+}
+
+@include large-desktop {
+  .navbar__wrapper {
     .navbar {
       flex-direction: row;
       .navbar__left {
