@@ -1,24 +1,27 @@
 <template>
   <div class="u-row">
     <!-- Check on Theme -->
-    <div class="banner"
-        :class="[darkTheme ? BannerDark : BannerLight]"
-        id="responsive"
+    <div
+      class="banner"
+      :class="[darkTheme ? BannerDark : BannerLight]"
+      id="responsive"
     >
-      <h2 class="banner__title u-mb--30">
-        <slot name="title"></slot>
-      </h2>
+      <div class="banner__wrapper u-text--center" v-in-viewport>
+        <h2 class="banner__title u-mb--30">
+          <slot name="title"></slot>
+        </h2>
 
-      <p class="banner__sub-title">
-        Consectetur adipiscing elit.
-      </p>
+        <p class="banner__sub-title">
+          Consectetur adipiscing elit.
+        </p>
 
-      <p class="banner__sub-title u-pt--10 u-pb--35">
-        Nulla condimentum tortor sem,
-      </p>
+        <p class="banner__sub-title u-pt--10 u-pb--35">
+          Nulla condimentum tortor sem,
+        </p>
 
-      <div class="banner__button u-text--center">
-        <slot name="button"></slot>
+        <div class="banner__button u-text--center">
+          <slot name="button"></slot>
+        </div>
       </div>
     </div>
   </div>
@@ -69,9 +72,11 @@ export default {
 .u-row {
   height: 100%;
   width: 100%;
+  overflow: hidden;
   .banner {
     height: 100%;
     padding-left: 80px;
+    padding-left: 100px;
     @include u-flex(column, center, flex-start);
     &__sub-title {
       font-size: 14px;
@@ -97,6 +102,16 @@ export default {
     }
     .banner__title {
       color: $light;
+      font-size: 80px;
+    }
+    .banner__wrapper {
+      padding-left: 50%;
+      transition: transform 0.5s ease-in, opacity 0.7s ease-in;
+      opacity: 0;
+    }
+    .banner__wrapper.in-viewport {
+      transform: translateX(-50%);
+      opacity: 1;
     }
     .banner__sub-title {
       color: $light;
@@ -110,6 +125,15 @@ export default {
   // Banner Light Style
   .banner.light-mode {
     background-color: $light;
+    .banner__wrapper {
+      margin-right: 50%;
+      transition: transform 0.5s ease-in, opacity 0.7s ease-in;
+      opacity: 0;
+    }
+    .banner__wrapper.in-viewport {
+      transform: translateX(50%);
+      opacity: 1;
+    }
     .banner__button {
       color: $dark;
       border: 1px solid $dark;
@@ -162,6 +186,17 @@ export default {
   }
 }
 
+@include tablet {
+  #responsive {
+    .banner__wrapper {
+      padding-right: 0;
+      padding-left: 0;
+      margin-right: 0;
+      margin-left: 0;
+      transform: none;
+    }
+  }
+}
 @include mobile {
   .u-row {
     position: relative;
@@ -180,6 +215,13 @@ export default {
       z-index: 5;
       padding-left: 0;
       @include u-flex(column);
+      .banner__wrapper {
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 0;
+        transform: none;
+      }
       .banner__button {
         color: $light;
         border: 1px solid $light;
@@ -190,7 +232,7 @@ export default {
         }
       }
       .banner__title {
-        font-size: 50px;
+        font-size: 40px;
         color: $light;
       }
       .banner__sub-title {
@@ -218,6 +260,13 @@ export default {
       z-index: 5;
       padding-left: 0;
       @include u-flex(column);
+      .banner__wrapper {
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 0;
+        transform: none;
+      }
       .banner__button {
         color: $light;
         border: 1px solid $light;
@@ -228,12 +277,23 @@ export default {
         }
       }
       .banner__title {
-        font-size: 50px;
+        font-size: 40px;
         color: $light;
       }
       .banner__sub-title {
         color: $light;
       }
+    }
+  }
+
+  //Animation
+  @keyframes move-right {
+    0% {
+      width: 70px;
+    }
+
+    100% {
+      width: 100px;
     }
   }
 }

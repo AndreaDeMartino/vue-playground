@@ -94,6 +94,7 @@ export default {
           img: this.innovation(),
         },
       ],
+      check: '',
     };
   },
   methods: {

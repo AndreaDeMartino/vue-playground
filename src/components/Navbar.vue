@@ -28,7 +28,7 @@
           <li class="navbar__item">
             <h4
               :class="{ active: actualPage == 'weDo' }"
-               v-scroll-to="{
+              v-scroll-to="{
                 el: '.we-do',
                 onStart: function(element) {
                   actualPage = 'weDo';
@@ -80,11 +80,11 @@ export default {
       actualPage: "",
     };
   },
-  created(){
-			eventBus.$on('actualPage', (actualPage) => {
-				this.actualPage = actualPage;
-			});
-		}
+  created() {
+    eventBus.$on("actualPage", (actualPage) => {
+      this.actualPage = actualPage;
+    });
+  },
 };
 </script>
 
@@ -123,16 +123,16 @@ export default {
           color: $light;
           font-weight: 300;
           letter-spacing: 0.1em;
+
           &:hover {
-            @include u-led;
-          }
-          &.active {
             @include u-led;
           }
         }
       }
     }
   }
+
+  // Responsive
   @include desktop {
     .navbar {
       flex-direction: row;
