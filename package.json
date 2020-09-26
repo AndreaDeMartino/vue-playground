@@ -10,6 +10,7 @@
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-browser-detect-plugin": "^0.1.13",
     "vue-in-viewport-directive": "^2.0.2",
     "vue-router": "^3.2.0",
     "vue-scrollto": "^2.18.2",

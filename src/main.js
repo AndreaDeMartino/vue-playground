@@ -5,6 +5,8 @@ import App from "./App.vue";
 import router from "./router";
 import inViewportDirective from "vue-in-viewport-directive";
 import axios from "axios";
+import browserDetect from "vue-browser-detect-plugin";
+
 
 /* PLUGINS AND TOOLS
    ============================= */
@@ -12,6 +14,9 @@ import axios from "axios";
 /* == Vue Scroll == */
 const VueScrollTo = require("vue-scrollto");
 Vue.use(VueScrollTo);
+
+/* == Vue Browser Detect == */
+Vue.use(browserDetect);
 
 /* == Vue Validate == */
 import Vuelidate from "vuelidate";

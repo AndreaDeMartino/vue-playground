@@ -13,7 +13,10 @@
 
     <!-- WE ARE -->
     <section class="we-are">
-      <app-banner :darkTheme="true">
+      <component
+        :is="this.$browserDetect.isIE ? 'appBanner' : 'appBannerIE'"
+        :darkTheme="true"
+      >
         <template slot="title">
           we <br />
           are.
@@ -21,12 +24,15 @@
         <template slot="button">
           THE PLAYERS <i class="fas fa-chevron-right u-text--light"></i>
         </template>
-      </app-banner>
+      </component>
     </section>
 
     <!-- WE DO -->
     <section class="we-do">
-      <app-banner :darkTheme="false">
+      <component
+        :is="this.$browserDetect.isIE ? 'appBanner' : 'appBannerIE'"
+        :darkTheme="false"
+      >
         <template slot="title">
           we <br />
           do.
@@ -34,19 +40,22 @@
         <template slot="button">
           THE PROJECTS <i class="fas fa-chevron-right u-text--dark"></i>
         </template>
-      </app-banner>
+      </component>
     </section>
 
     <!-- CAREERS -->
     <section class="careers">
-      <app-banner :darkTheme="true">
+      <component
+        :is="this.$browserDetect.isIE ? 'appBanner' : 'appBannerIE'"
+        :darkTheme="true"
+      >
         <template slot="title">
           careers
         </template>
         <template slot="button">
           THE POSITIONS <i class="fas fa-chevron-right u-text--light"></i>
         </template>
-      </app-banner>
+      </component>
     </section>
 
     <!-- TABS -->
@@ -65,6 +74,7 @@
 // Components
 import Card from "../Card.vue";
 import Banner from "../Banner.vue";
+import Bannerie from "../BannerIE.vue";
 import Tab from "../Tab.vue";
 import Form from "../Form.vue";
 
@@ -72,6 +82,7 @@ export default {
   components: {
     appCard: Card,
     appBanner: Banner,
+    appBannerIE: Bannerie,
     appTab: Tab,
     appForm: Form,
   },
@@ -94,6 +105,7 @@ export default {
           img: this.innovation(),
         },
       ],
+      iexploer: "",
     };
   },
   methods: {
