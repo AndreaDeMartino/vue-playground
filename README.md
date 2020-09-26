@@ -5,12 +5,13 @@
 npm install
 ```
 
-## Install json-server to open http://localhost:3000 port (For windows users, please launch this command with admin privileges)
+## Install json-server to open http://localhost:3000 port 
+#### (For windows users, please launch this command with admin privileges)
 ```
 sudo npm install -g json-server    
 ```
 
-## Run json-servr ports on tabs.json local file
+## Run json-server ports on tabs.json local file
 ```
 sudo json-server --watch tabs.json
 ```
