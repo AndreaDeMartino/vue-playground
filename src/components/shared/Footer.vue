@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" :class="{iexploer : this.$browserDetect.isIE}">
     <!-- Footer Logo -->
     <div class="footer__logo">
       <img src="../../assets/images/logo-footer.png" alt="" />
@@ -137,7 +137,9 @@ export default {
     }
   }
 }
-
+.footer.iexploer {
+  padding-top: 30px;
+}
 /****************************************************
   * RESPONSIVE
   ****************************************************/

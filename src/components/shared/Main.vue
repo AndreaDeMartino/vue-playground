@@ -105,7 +105,6 @@ export default {
           img: this.innovation(),
         },
       ],
-      iexploer: "",
     };
   },
   methods: {
