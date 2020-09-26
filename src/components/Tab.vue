@@ -73,19 +73,16 @@ export default {
       this.loader = true;
       this.active = tab;
       axios
-        .get("/tab" + tab)
+        .get("/tab" + tab + '.json')
         .then((res) => {
           this.tabData = res.data.content;
           this.loader = false;
         })
         .catch((err) => {
-          this.tabData = "Dont-Forget-to-launch-json-server-command";
+          this.tabData = "Error to load this tab";
           setTimeout(() => {
             this.loader = false;
-            console.log(
-              "Remember to launch this json-server command: ***| json-server --watch tabs.json |*** if it hasn't already been done"
-            );
-          }, 2000);
+          }, 1000);
         });
     },
   },

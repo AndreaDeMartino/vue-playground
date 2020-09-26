@@ -27,7 +27,8 @@ Vue.directive("in-viewport", inViewportDirective);
 inViewportDirective.defaults.margin = "-40% 0%";
 
 /* == Axios == */
-axios.defaults.baseURL = "http://localhost:3000";
+// axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "https://vue-playground-spa.firebaseio.com/";
 
 /* == Event Bus == */
 export const eventBus = new Vue();
