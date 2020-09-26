@@ -4,10 +4,46 @@
       <img src="../../assets/images/logo-footer.png" alt="" />
     </div>
     <div class="footer__sections">
-      <p v-scroll-to="'.we-are'">we are</p>
-      <p v-scroll-to="'.we-do'">we do</p>
-      <p v-scroll-to="'.careers'">careers</p>
-      <p v-scroll-to="'.contact'">contact us</p>
+      <p
+        v-scroll-to="{
+          el: '.we-are',
+          onStart: function(element) {
+            editAge('weAre');
+          },
+        }"
+      >
+        we are
+      </p>
+      <p
+        v-scroll-to="{
+          el: '.we-do',
+          onStart: function(element) {
+           editAge('weDo');
+          },
+        }"
+      >
+        we do
+      </p>
+      <p
+        v-scroll-to="{
+          el: '.careers',
+          onStart: function(element) {
+            editAge('careers');
+          },
+        }"
+      >
+        careers
+      </p>
+      <p
+        v-scroll-to="{
+          el: '.contact',
+          onStart: function(element) {
+            editAge('contact');
+          },
+        }"
+      >
+        contact us
+      </p>
     </div>
     <div class="footer__icons u-mb--5">
       <i class="fab fa-facebook-square"></i>
@@ -18,7 +54,22 @@
 </template>
 
 <script>
-export default {};
+// Event Bus to get the actual Page
+import { eventBus } from "../../main.js";
+
+export default {
+  data() {
+    return {
+      actualPage: "",
+    }
+  },
+  methods: {
+    editAge(page) {
+      this.actualPage = page;
+      eventBus.$emit("actualPage", this.actualPage);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

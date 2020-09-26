@@ -14,9 +14,13 @@
         <ul class="navbar__list">
           <li class="navbar__item">
             <h4
-              :class="{ active: actualPage == 'active' }"
-              @click="actualPage = 'active'"
-              v-scroll-to="'.we-are'"
+              :class="{ active: actualPage == 'weAre' }"
+              v-scroll-to="{
+                el: '.we-are',
+                onStart: function(element) {
+                  actualPage = 'weAre';
+                },
+              }"
             >
               we are
             </h4>
@@ -24,8 +28,12 @@
           <li class="navbar__item">
             <h4
               :class="{ active: actualPage == 'weDo' }"
-              @click="actualPage = 'weDo'"
-              v-scroll-to="'.we-do'"
+               v-scroll-to="{
+                el: '.we-do',
+                onStart: function(element) {
+                  actualPage = 'weDo';
+                },
+              }"
             >
               we do
             </h4>
@@ -33,8 +41,12 @@
           <li class="navbar__item">
             <h4
               :class="{ active: actualPage == 'careers' }"
-              @click="actualPage = 'careers'"
-              v-scroll-to="'.careers'"
+              v-scroll-to="{
+                el: '.careers',
+                onStart: function(element) {
+                  actualPage = 'careers';
+                },
+              }"
             >
               careers
             </h4>
@@ -42,8 +54,12 @@
           <li class="navbar__item">
             <h4
               :class="{ active: actualPage == 'contact' }"
-              @click="actualPage = 'contact'"
-              v-scroll-to="'.contact'"
+              v-scroll-to="{
+                el: '.contact',
+                onStart: function(element) {
+                  actualPage = 'contact';
+                },
+              }"
             >
               contact us
             </h4>
@@ -55,12 +71,20 @@
 </template>
 
 <script>
+// Event Bus to get the actual Page
+import { eventBus } from "../main.js";
+
 export default {
   data() {
     return {
       actualPage: "",
     };
   },
+  created(){
+			eventBus.$on('actualPage', (actualPage) => {
+				this.actualPage = actualPage;
+			});
+		}
 };
 </script>
 
