@@ -51,9 +51,15 @@
 
     <!-- Footer socials -->
     <div class="footer__icons u-mb--5">
-      <i class="fab fa-facebook-square"></i>
-      <i class="fab fa-linkedin-in"></i>
-      <i class="fab fa-instagram"></i>
+      <a href="https://www.facebook.com/playground.digital.agency"
+        ><i class="fab fa-facebook-square"></i
+      ></a>
+      <a href="https://www.linkedin.com/company/playground-digital-agency/"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <a href="https://www.instagram.com/playground_agency/?hl=it"
+        ><i class="fab fa-instagram"></i
+      ></a>
     </div>
   </footer>
 </template>
@@ -99,6 +105,8 @@ export default {
       white-space: nowrap;
       position: relative;
       transition: color 0.6s linear;
+      font-family: "gotham-medium";
+      letter-spacing: 0.1em;
       cursor: pointer;
       &:last-child {
         margin-right: 0;
@@ -145,9 +153,7 @@ export default {
       p {
         padding-right: 0;
         padding: 10px 0;
-        &:last-child {
-          margin-right: 80px;
-        }
+        margin-right: 0;
       }
     }
   }
@@ -164,9 +170,7 @@ export default {
       p {
         padding-right: 0;
         padding: 10px 0;
-        &:last-child {
-          margin-right: 80px;
-        }
+        margin-right: 0;
       }
     }
   }

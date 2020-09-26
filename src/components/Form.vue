@@ -1,5 +1,5 @@
 <template>
-  <div class="contact" :class="{ sent: formValidate }">
+  <div class="contact" :class="{ sent: sendAnimation }">
     <div class="contact__wrapper u-container">
       <!-- Contact Title -->
       <div class="contact__text">
@@ -108,7 +108,7 @@
         <!-- Subtmit Button -->
         <div class="u-row">
           <button
-            @click.prevent="formValidate = true"
+            @click.prevent="(formValidate = true), (sendAnimation = true)"
             class="button"
             :class="{
               disabled:
@@ -126,7 +126,7 @@
 
     <!-- Alert Message Was Sent -->
     <transition name="fade">
-      <h4 class="sent__message" v-if="formValidate">
+      <h4 class="sent__message" v-if="sendAnimation">
         MESSAGE SENT
       </h4>
     </transition>
@@ -149,6 +149,7 @@ export default {
       selectedEmail: false,
       selectedMessage: false,
       formValidate: false,
+      sendAnimation: false,
     };
   },
   watch: {
@@ -162,6 +163,12 @@ export default {
       this.selectedLastName = false;
       this.selectedEmail = false;
       this.selectedMessage = false;
+      this.formValidate = false;
+    },
+    sendAnimation: function() {
+      setTimeout(() => {
+        this.sendAnimation = false;
+      }, 3000);
     },
   },
   validations: {
@@ -375,12 +382,28 @@ export default {
 
 @include tablet {
   .contact {
-    .sent__message {
-      font-size: 10px;
-    }
-    .contact__form {
-      .button {
-        margin-bottom: 40px;
+    .contact__wrapper {
+      .contact__text {
+        height: 200px;
+        margin-right: 0;
+        @include u-flex;
+        h2 {
+          text-align: center;
+          margin-bottom: 0 !important;
+        }
+        .contact__subtext {
+          margin-right: 0;
+          margin-left: 30px;
+        }
+      }
+
+      .sent__message {
+        font-size: 10px;
+      }
+      .contact__form {
+        .button {
+          margin-bottom: 40px;
+        }
       }
     }
   }

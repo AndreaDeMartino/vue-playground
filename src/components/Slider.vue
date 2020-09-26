@@ -59,7 +59,7 @@
         <i
           class="fas fa-circle u-text--light"
           :class="{ active: index + 1 == actualBg }"
-          @click="actualBg = index + 1"
+          @click.prevent="actualBg = index + 1"
         ></i>
       </li>
     </ul>
