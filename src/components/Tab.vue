@@ -72,11 +72,12 @@ export default {
           this.loader = false;
         })
         .catch((err) => {
-          this.tabData =
-            "Dont-Forget-to-launch-json-server-command";
-          // Remember after 3 seconds to launch json-server command if it hasn't already been done
+          this.tabData = "Dont-Forget-to-launch-json-server-command";
           setTimeout(() => {
             this.loader = false;
+            console.log(
+              "Remember to launch this json-server command: ***| json-server --watch tabs.json |*** if it hasn't already been done"
+            );
           }, 2000);
         });
     },

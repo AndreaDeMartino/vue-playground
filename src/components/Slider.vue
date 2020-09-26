@@ -43,8 +43,8 @@
     </div>
 
     <!-- Slider Buttons -->
-    <i class="slider__left fas fa-chevron-left" @click="sliderLeft()"></i>
-    <i class="slider__right fas fa-chevron-right" @click="sliderRight()"></i>
+    <i class="slider__left fas fa-chevron-left" @click.prevent="sliderLeft()"></i>
+    <i class="slider__right fas fa-chevron-right" @click.prevent="sliderRight()"></i>
 
     <!-- Slider Selector -->
     <ul class="slider__selector">

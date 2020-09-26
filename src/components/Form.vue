@@ -2,7 +2,7 @@
   <div class="contact" :class="{ sent: formValidate }">
     <transition name="fade">
       <h4 class="sent__message" v-if="formValidate">
-        THE MESSAGE WAS SENT CORRECTLY
+        MESSAGE SENT
       </h4>
     </transition>
     <div class="contact__wrapper u-container">
@@ -188,6 +188,8 @@ export default {
     width: 100%;
     @include u-flex;
     color: $gold;
+    font-family: 'gotham-medium';
+    letter-spacing: 0.1em;
     text-shadow: 1px 1px 3px rgba(219, 206, 87, 0.5);
     opacity: 0;
     animation: display 2.5s ease-in;
@@ -415,24 +417,4 @@ export default {
     }
   }
 }
-
-//debug
-//  &:before {
-//           content: "";
-//           position: absolute;
-//           bottom: -5px;
-//           height: 1px;
-//           width: 150%;
-//           background: linear-gradient(90deg, transparent, $gold);
-//           animation: button-animate 1.5s forwards;
-
-//           @keyframes button-animate {
-//   0% {
-//     left: -150%;
-//   }
-
-//   100% {
-//     left: 0%;
-//   }
-// }
 </style>
