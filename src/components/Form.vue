@@ -396,7 +396,7 @@ export default {
 
 @include tablet {
   .contact {
-    .contact__wrapper {
+    &__wrapper {
       .contact__text {
         height: 200px;
         margin-right: 0;
@@ -410,7 +410,6 @@ export default {
           margin-left: 30px;
         }
       }
-
       .sent__message {
         font-size: 10px;
       }
