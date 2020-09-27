@@ -1,6 +1,12 @@
 <template>
-  <div class="contact" :class="{ sent: sendAnimation }">
-    <div class="contact__wrapper u-container" :class="{iexploer : this.$browserDetect.isIE}">
+  <div
+    class="contact"
+    :class="{ sent: sendAnimation, iexploer: this.$browserDetect.isIE }"
+  >
+    <div
+      class="contact__wrapper u-container"
+      :class="{ iexploer: this.$browserDetect.isIE }"
+    >
       <!-- Contact Title -->
       <div class="contact__text">
         <h2
@@ -201,7 +207,7 @@ export default {
   @include u-flex;
   &__wrapper.iexploer {
     margin: 0;
-  }  
+  }
   .sent__message {
     position: absolute;
     bottom: 12px;
@@ -345,6 +351,9 @@ export default {
     width: 100%;
     animation: sentMessage 3s linear;
   }
+}
+.contact.iexploer {
+  height: 500px;
 }
 
 /****************************************************
