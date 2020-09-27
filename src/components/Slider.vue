@@ -72,22 +72,40 @@ export default {
     return {
       backgrounds: ["hello", "play", "circle"],
       actualBg: 1,
+      sliderAnimation: false,
     };
   },
   methods: {
     sliderRight() {
-      this.actualBg == this.backgrounds.length
-        ? (this.actualBg = 1)
-        : (this.actualBg += 1);
+      if (!this.sliderAnimation) {
+        this.sliderAnimation = true;
+        this.actualBg == this.backgrounds.length
+          ? (this.actualBg = 1)
+          : (this.actualBg += 1);
+        setTimeout(() => {
+          this.sliderAnimation = false;
+        }, 600);
+      }
     },
     sliderLeft() {
-      this.actualBg == 1
-        ? (this.actualBg = this.backgrounds.length)
-        : (this.actualBg -= 1);
+      if (!this.sliderAnimation) {
+        this.sliderAnimation = true;
+        this.actualBg == 1
+          ? (this.actualBg = this.backgrounds.length)
+          : (this.actualBg -= 1);
+        setInterval(() => {
+          console.log(this.sliderAnimation);
+          this.sliderAnimation = false;
+        }, 600);
+      }
     },
   },
   mounted() {
-    setInterval(() => this.sliderRight(), 4500);
+    setInterval(() => {
+      if (!this.sliderAnimation) {
+        this.sliderRight();
+      }
+    }, 4000);
   },
 };
 </script>
