@@ -1,6 +1,6 @@
 <template>
-  <div class="tabs">
-    <div class="tabs__wrapper" :class="{iexploer : this.$browserDetect.isIE}">
+  <div class="tabs" :class="{ iexploer: this.$browserDetect.isIE }">
+    <div class="tabs__wrapper">
       <div class="tabs__box">
         <!-- First Tab -->
         <div
@@ -73,7 +73,7 @@ export default {
       this.loader = true;
       this.active = tab;
       axios
-        .get("/tab" + tab + '.json')
+        .get("/tab" + tab + ".json")
         .then((res) => {
           this.tabData = res.data.content;
           this.loader = false;
@@ -151,7 +151,9 @@ export default {
     }
   }
 }
-
+.tabs.iexploer {
+  height: 500px;
+}
 
 /****************************************************
   * Responsive

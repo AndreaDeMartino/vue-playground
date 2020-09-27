@@ -2,7 +2,7 @@
   <main>
     <!-- CARDS -->
     <section class="cards">
-      <div class="u-container">
+      <div class="u-container" :class="{iexploer : this.$browserDetect.isIE}">
         <app-card
           v-for="(info, index) in cardInfo"
           :key="index"
@@ -128,6 +128,9 @@ export default {
     min-height: 500px;
     @include u-flex;
     flex-wrap: wrap;
+  }
+  .u-container.iexploer {
+    height: 500px;
   }
 }
 

@@ -201,7 +201,6 @@ export default {
   @include u-flex;
   &__wrapper.iexploer {
     margin: 0;
-    padding-top: 30px;
   }  
   .sent__message {
     position: absolute;
@@ -333,7 +332,9 @@ export default {
       }
     }
   }
-
+  .contact.iexploer {
+    height: 500px;
+  }
   .contact.sent:after {
     content: "";
     position: absolute;

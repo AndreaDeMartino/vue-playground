@@ -138,7 +138,7 @@ export default {
   }
 }
 .footer.iexploer {
-  padding-top: 30px;
+  height: 350px;
 }
 /****************************************************
   * RESPONSIVE
