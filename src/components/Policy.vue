@@ -29,7 +29,8 @@ export default {
   width: 100%;
   bottom: 0;
   left: 0;
-  background-color: $light;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(circle, $light 0%, rgb(206, 205, 205) 71%);
   color: $dark;
   z-index: 5;
   @include u-flex;
@@ -40,8 +41,8 @@ export default {
   &__button {
     width: 100px;
     height: 30px;
-    @include u-flex;
     background-color: $dark;
+    @include u-flex;
     cursor: pointer;
     &:hover {
       background-color: $flash;
@@ -59,7 +60,7 @@ export default {
   .policy {
     height: 60px;
     @include u-flex(column);
-    .policy__button {
+    &__button {
       width: 80px;
       height: 20px;
       margin: 4px 0;
@@ -71,7 +72,7 @@ export default {
   .policy {
     height: 60px;
     @include u-flex(column);
-    .policy__button {
+    &__button {
       width: 80px;
       height: 20px;
       margin: 4px 0;

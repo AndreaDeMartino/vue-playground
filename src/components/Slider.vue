@@ -118,20 +118,20 @@ export default {
   &__image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    position: absolute;
     bottom: 0;
     left: 0;
     z-index: -1;
+    object-fit: cover;
+    position: absolute;
   }
   &__right,
   &__left {
     position: absolute;
     top: 50%;
-    color: $light;
     transform: translateY(-50%);
-    font-size: 26px;
     z-index: 5;
+    font-size: 26px;
+    color: $light;
     opacity: 0.5;
     transition: opacity 0.3s;
     cursor: pointer;
@@ -148,8 +148,8 @@ export default {
   &__text {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     left: 20%;
+    transform: translateY(-50%);
     p {
       opacity: 0.7;
     }
@@ -182,7 +182,7 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    .slider__image {
+    &__image {
       filter: blur(2px);
     }
   }
@@ -193,9 +193,9 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
     }
-  }
-  .slider__image {
-    filter: blur(2px);
+    &__image {
+      filter: blur(2px);
+    }
   }
 }
 </style>

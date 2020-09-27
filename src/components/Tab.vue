@@ -99,7 +99,6 @@ export default {
   background-color: $bg_light;
   @include u-flex;
   &__wrapper {
-    margin-top: 30px !important;
     @include u-flex(row, center, flex-start);
     .tabs__box {
       .tab {

@@ -142,10 +142,10 @@ export default {
   .navbar__wrapper {
     .navbar {
       flex-direction: row;
-      .navbar__left {
+      &__left {
         margin-bottom: 0;
       }
-      .navbar__list {
+      &__list {
         @include u-list(20);
       }
     }
@@ -156,10 +156,10 @@ export default {
   .navbar__wrapper {
     .navbar {
       flex-direction: row;
-      .navbar__left {
+      &__left {
         margin-bottom: 0;
       }
-      .navbar__list {
+      &__list {
         @include u-list(25);
       }
     }

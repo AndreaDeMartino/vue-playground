@@ -199,7 +199,7 @@ export default {
   position: relative;
   overflow-x: hidden;
   @include u-flex;
-  .contact__wrapper.iexploer {
+  &__wrapper.iexploer {
     margin: 0;
     padding-top: 30px;
   }  

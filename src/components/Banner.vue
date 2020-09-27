@@ -4,7 +4,7 @@
     <div
       class="banner"
       :class="[darkTheme ? BannerDark : BannerLight]"
-      id="responsive"
+      id="theme"
     >
       <div class="banner__wrapper u-text--center" v-in-viewport>
         <h2 class="banner__title u-mb--30">
@@ -98,13 +98,12 @@ export default {
   // Banner Dark Style
   .banner.dark-mode {
     background-color: $dark;
-    .banner__button {
-      color: $light;
-      border: 1px solid $light;
-    }
     .banner__title {
       color: $light;
       font-size: 80px;
+    }
+    .banner__sub-title {
+      color: $light;
     }
     .banner__wrapper {
       padding-left: 50%;
@@ -115,8 +114,9 @@ export default {
       transform: translateX(-50%);
       opacity: 1;
     }
-    .banner__sub-title {
+    .banner__button {
       color: $light;
+      border: 1px solid $light;
     }
     .banner__button:hover {
       background-color: $flash;
@@ -136,12 +136,12 @@ export default {
       transform: translateX(50%);
       opacity: 1;
     }
+    .banner__sub-title {
+      color: $dark;
+    }
     .banner__button {
       color: $dark;
       border: 1px solid $dark;
-    }
-    .banner__sub-title {
-      color: $dark;
     }
     .banner__button:hover {
       color: $flash;
@@ -166,7 +166,7 @@ export default {
       background-color: black;
       opacity: 0.6;
     }
-    #responsive {
+    #theme {
       background-color: transparent;
       z-index: 5;
       padding-left: 0;
@@ -213,7 +213,7 @@ export default {
       background-color: black;
       opacity: 0.6;
     }
-    #responsive {
+    #theme {
       background-color: transparent;
       z-index: 5;
       padding-left: 0;
@@ -261,7 +261,7 @@ export default {
       background-color: black;
       opacity: 0.6;
     }
-    #responsive {
+    #theme {
       background-color: transparent;
       z-index: 5;
       padding-left: 0;

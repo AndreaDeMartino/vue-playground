@@ -1,7 +1,7 @@
 <template>
   <main>
     <!-- CARDS -->
-    <section class="cards u-pt--15">
+    <section class="cards">
       <div class="u-container">
         <app-card
           v-for="(info, index) in cardInfo"

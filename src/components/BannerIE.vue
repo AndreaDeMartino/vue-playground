@@ -4,7 +4,7 @@
     <div
       class="banner"
       :class="[darkTheme ? BannerDark : BannerLight]"
-      id="responsive"
+      id="theme"
     >
       <div class="banner__wrapper u-text--center">
         <h2 class="banner__title u-mb--30">
@@ -102,17 +102,17 @@ export default {
       color: $light;
       border: 1px solid $light;
     }
+    .banner__button:hover {
+      background-color: $flash;
+      box-shadow: 0 0 5px $flash, 0 0 10px $flash, 0 0 20px $flash,
+        0 0 30px $flash;
+    }
     .banner__title {
       color: $light;
       font-size: 80px;
     }
     .banner__sub-title {
       color: $light;
-    }
-    .banner__button:hover {
-      background-color: $flash;
-      box-shadow: 0 0 5px $flash, 0 0 10px $flash, 0 0 20px $flash,
-        0 0 30px $flash;
     }
   }
   // Banner Light Style
@@ -125,11 +125,11 @@ export default {
       color: $dark;
       border: 1px solid $dark;
     }
-    .banner__sub-title {
-      color: $dark;
-    }
     .banner__button:hover {
       color: $flash;
+    }
+    .banner__sub-title {
+      color: $dark;
     }
   }
 }
@@ -151,7 +151,7 @@ export default {
       background-color: black;
       opacity: 0.6;
     }
-    #responsive {
+    #theme {
       background-color: transparent;
       z-index: 5;
       padding-left: 0;
@@ -198,7 +198,7 @@ export default {
       background-color: black;
       opacity: 0.6;
     }
-    #responsive {
+    #theme {
       background-color: transparent;
       z-index: 5;
       padding-left: 0;
@@ -246,7 +246,7 @@ export default {
       background-color: black;
       opacity: 0.6;
     }
-    #responsive {
+    #theme {
       background-color: transparent;
       z-index: 5;
       padding-left: 0;
