@@ -312,7 +312,7 @@ export default {
         background-color: $dark;
         font-size: 14px;
         font-family: "gotham-book";
-        color: #4d4d4d;
+        color: $light;
         padding: 10px;
         outline: none;
         resize: none;
