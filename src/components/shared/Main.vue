@@ -14,7 +14,7 @@
     <!-- WE ARE -->
     <section class="we-are">
       <component
-        :is="!this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
+        :is="this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
         :darkTheme="true"
       >
         <template slot="title">
@@ -30,7 +30,7 @@
     <!-- WE DO -->
     <section class="we-do">
       <component
-        :is="!this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
+        :is="this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
         :darkTheme="false"
       >
         <template slot="title">
@@ -46,7 +46,7 @@
     <!-- CAREERS -->
     <section class="careers">
       <component
-        :is="!this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
+        :is="this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
         :darkTheme="true"
       >
         <template slot="title">
