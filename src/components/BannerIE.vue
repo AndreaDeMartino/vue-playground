@@ -7,7 +7,7 @@
       id="theme"
     >
       <div class="banner__wrapper u-text--center">
-        <h2 class="banner__title u-mb--30">
+        <h2 class="banner__title u-mb--25">
           <!-- Dynamic Title -->
           <slot name="title"></slot>
         </h2>
@@ -22,7 +22,7 @@
 
         <div class="banner__button u-text--center">
           <!-- Dynamic Button -->
-          <slot name="button"></slot>
+          <slot name="button" class="button__text"></slot>
         </div>
       </div>
     </div>
@@ -77,36 +77,28 @@ export default {
   overflow: hidden;
   .banner {
     height: 100%;
-    padding-left: 80px;
-    padding-left: 100px;
-    @include u-flex(column, center, flex-start);
+    @include u-flex(column, center, center);
     &__sub-title {
-      max-width: 220px;
+      min-width: 220px;
       font-size: 14px;
-      letter-spacing: 0.1em;
     }
     &__button {
       max-width: 250px;
-      padding: 15px 25px;
+      @include u-flex;
       font-size: 14px;
       letter-spacing: 0.2em;
       transition: color 0.3s linear, box-shadow 0.3s linear,
         background-color 0.3s linear;
       cursor: pointer;
+      i {
+        padding-left: 5px;
+      }
     }
   }
   // Banner Dark Style
   .banner.dark-mode {
+    // padding-left: 75px;
     background-color: $dark;
-    .banner__button {
-      color: $light;
-      border: 1px solid $light;
-    }
-    .banner__button:hover {
-      background-color: $flash;
-      box-shadow: 0 0 5px $flash, 0 0 10px $flash, 0 0 20px $flash,
-        0 0 30px $flash;
-    }
     .banner__title {
       color: $light;
       font-size: 80px;
@@ -114,22 +106,50 @@ export default {
     .banner__sub-title {
       color: $light;
     }
+    .banner__wrapper {
+      text-align: left;
+    }
+    .banner__button {
+      height: 50px;
+      width: 180px;
+      color: $light;
+      border: 1px solid $light;
+      font-size: 14px;
+    }
+    .banner__button:hover {
+      background-color: $flash;
+      box-shadow: 0 0 5px $flash, 0 0 10px $flash, 0 0 20px $flash,
+        0 0 30px $flash;
+    }
   }
   // Banner Light Style
   .banner.light-mode {
     background-color: $light;
+    @include u-flex(column, center, center);
     .banner__wrapper {
-      margin-right: 50%;
+      text-align: right;
+      @include u-flex(column, center, flex-end);
     }
-    .banner__button {
-      color: $dark;
-      border: 1px solid $dark;
-    }
-    .banner__button:hover {
-      color: $flash;
+    .banner__title {
+      width: 100%;
+      text-align: right;
     }
     .banner__sub-title {
       color: $dark;
+      width: 100%;
+      text-align: right;
+    }
+    .banner__button {
+      height: 50px;
+      width: 180px;
+      color: $dark;
+      border: 1px solid $dark;
+      .button__text {
+        font-size: 14px;
+      }
+    }
+    .banner__button:hover {
+      color: $flash;
     }
   }
 }
@@ -162,6 +182,7 @@ export default {
         margin-right: 0;
         margin-left: 0;
         transform: none;
+        @include u-flex(column, center, center);
       }
       .banner__button {
         color: $light;
@@ -176,9 +197,11 @@ export default {
         }
       }
       .banner__title {
+        text-align: center;
         color: $light;
       }
       .banner__sub-title {
+        text-align: center;
         color: $light;
       }
     }
@@ -209,6 +232,7 @@ export default {
         margin-right: 0;
         margin-left: 0;
         transform: none;
+        @include u-flex(column, center, center);
       }
       .banner__button {
         color: $light;
@@ -224,9 +248,11 @@ export default {
       }
       .banner__title {
         font-size: 40px;
+        text-align: center;
         color: $light;
       }
       .banner__sub-title {
+        text-align: center;
         color: $light;
       }
     }
@@ -252,11 +278,13 @@ export default {
       padding-left: 0;
       @include u-flex(column);
       .banner__wrapper {
+        width: 100px;
         padding-right: 0;
         padding-left: 0;
         margin-right: 0;
         margin-left: 0;
         transform: none;
+        @include u-flex(column, center, center);
       }
       .banner__button {
         color: $light;
@@ -272,9 +300,11 @@ export default {
       }
       .banner__title {
         font-size: 40px;
+        text-align: center;
         color: $light;
       }
       .banner__sub-title {
+        text-align: center;
         color: $light;
       }
     }

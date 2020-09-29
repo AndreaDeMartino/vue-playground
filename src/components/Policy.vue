@@ -49,6 +49,9 @@ export default {
       box-shadow: 0 0 1px $flash, 0 0 3px $flash, 0 0 5px $flash;
       color: $light;
     }
+    span {
+      font-size: 10px;
+    }
   }
 }
 

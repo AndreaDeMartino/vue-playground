@@ -106,7 +106,6 @@ export default {
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     z-index: -1;
-    box-shadow: 0 0.1px 3px rgba(255, 255, 255, 0.25);
   }
   .navbar {
     @include u-flex(column, space-between, center);

@@ -8,7 +8,7 @@
           :class="{ 'tab--active': active == 1 }"
           @click="getData(1)"
         >
-          Vestibulum at odio sit amet
+          <p class="tab__text">Vestibulum at odio sit amet</p>
           <i v-if="active == 1" class="fas fa-chevron-down"></i>
           <i v-else class="fas fa-chevron-up"></i>
         </div>
@@ -19,7 +19,7 @@
           :class="{ 'tab--active': active == 2 }"
           @click="getData(2)"
         >
-          Sed vehicula neque
+          <p class="tab__text">Sed vehicula neque</p>
           <i v-if="active == 2" class="fas fa-chevron-down"></i>
           <i v-else class="fas fa-chevron-up"></i>
         </div>
@@ -30,7 +30,7 @@
           :class="{ 'tab--active': active == 3 }"
           @click="getData(3)"
         >
-          Nulla id libero pretium
+          <p class="tab__text">Nulla id libero pretium</p>
           <i v-if="active == 3" class="fas fa-chevron-down"></i>
           <i v-else class="fas fa-chevron-up"></i>
         </div>
@@ -108,15 +108,23 @@ export default {
         font-family: "gotham-book";
         margin: 1px 0;
         transition: background-color 0.3s linear;
-        @include u-flex;
+        display: flex;
+        align-items: center;
         cursor: pointer;
+        .tab__text {
+          padding-left: 70px;
+          color: $dark;
+          text-align: left;
+        }
         i {
           margin-left: 6px;
         }
       }
       .tab--active {
         background-color: $dark;
-        color: $light;
+        .tab__text {
+          color: $light;
+        }
         i {
           color: $light;
         }
@@ -132,9 +140,9 @@ export default {
       position: relative;
       .show__area {
         span {
-          font-family: "gotham-medium";
-          font-size: 12px;
-          color: $light-text;
+          font-family: "gotham-book";
+          font-size: 14px;
+          color: $dark;
         }
       }
     }
@@ -169,6 +177,9 @@ export default {
           width: calc(100% / 3);
           margin: 0 2px;
           padding: 0 40px;
+          &__text {
+            padding-left: 0;
+          }
         }
       }
       .tabs__show {
@@ -190,6 +201,10 @@ export default {
           width: 100%;
           margin: 1px 0;
           padding: 0 40px;
+          @include u-flex;
+          &__text {
+            padding-left: 0;
+          }
         }
       }
       .tabs__show {
@@ -213,6 +228,10 @@ export default {
           width: 100%;
           margin: 1px 0;
           padding: 0 40px;
+          @include u-flex;
+          &__text {
+            padding-left: 0;
+          }
         }
       }
       .tabs__show {

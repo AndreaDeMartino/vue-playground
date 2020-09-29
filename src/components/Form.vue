@@ -234,7 +234,7 @@ export default {
     flex-wrap: wrap;
     .contact__text {
       height: 350px;
-      margin-right: 50px;
+      margin-right: 125px;
       h2 {
         transition: text-shadow 0.3s linear;
       }
@@ -244,7 +244,7 @@ export default {
           0 0 30px $gold, 0 0 35px $gold, 2px 2px 1px rgba(206, 199, 37, 0);
       }
       .contact__subtext {
-        max-width: 50%;
+        max-width: 80%;
         color: $light;
       }
     }
@@ -262,7 +262,7 @@ export default {
         background-color: $dark;
         color: $bg_light;
         padding: 9px;
-        border: 1px solid $border;
+        border: 1px solid $light;
         outline: none;
         transition: border-color 0.3s linear;
         letter-spacing: 1px;
@@ -282,12 +282,13 @@ export default {
       }
       p {
         position: absolute;
-        height: 12px;
-        font-size: 12px;
+        height: 14px;
+        font-size: 14px;
+        font-family: "gotham-book";
+        color: #4d4d4d;
         padding: 0 3px;
         top: calc(50% - 6px);
         left: 10px;
-        color: $border;
         background-color: $dark;
         pointer-events: none;
       }
@@ -297,10 +298,16 @@ export default {
       textarea {
         width: 100%;
         background-color: $dark;
-        color: $light;
+        font-size: 14px;
+        font-family: "gotham-book";
+        color: #4d4d4d;
         padding: 10px;
         outline: none;
         resize: none;
+        border: 1px solid $light;
+        &::placeholder {
+          color: #4d4d4d;
+        }
       }
       .validation__area {
         position: relative;

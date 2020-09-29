@@ -2,7 +2,7 @@
   <main>
     <!-- CARDS -->
     <section class="cards">
-      <div class="u-container" :class="{iexploer : this.$browserDetect.isIE}">
+      <div class="u-container" :class="{ iexploer: this.$browserDetect.isIE }">
         <app-card
           v-for="(info, index) in cardInfo"
           :key="index"
@@ -14,7 +14,7 @@
     <!-- WE ARE -->
     <section class="we-are">
       <component
-        :is="this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
+        :is="!this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
         :darkTheme="true"
       >
         <template slot="title">
@@ -30,7 +30,7 @@
     <!-- WE DO -->
     <section class="we-do">
       <component
-        :is="this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
+        :is="!this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
         :darkTheme="false"
       >
         <template slot="title">
@@ -46,7 +46,7 @@
     <!-- CAREERS -->
     <section class="careers">
       <component
-        :is="this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
+        :is="!this.$browserDetect.isIE ? 'appBannerIE' : 'appBanner'"
         :darkTheme="true"
       >
         <template slot="title">
@@ -96,12 +96,12 @@ export default {
         },
         {
           text:
-            "Suspendisse vehicula, lectus sed molestie aliquam, arcu neque gravida lacus.",
+            "Donec vitae augue tellus. Proin et urna sit amet metus fermentum dapibus non quis urna.",
           img: this.simplicity(),
         },
         {
           text:
-            "Donec vitae augue tellus. Proin et urna sit amet metus fermentum dapibus non quis urna.",
+            "Suspendisse vehicula, lectus sed molestie aliquam, arcu neque gravida lacus.",
           img: this.innovation(),
         },
       ],

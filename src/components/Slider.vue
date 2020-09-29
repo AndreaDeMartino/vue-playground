@@ -28,10 +28,10 @@
 
     <!-- Slider Text -->
     <div class="slider__text">
-      <h1 class="u-text--light u-mb--30">
+      <h2 class="u-text--light u-mb--30">
         lorem <br />
         ipsum.
-      </h1>
+      </h2>
       <p class="u-text--light">
         Consectetur adipiscing elit.
       </p>
@@ -155,14 +155,15 @@ export default {
     }
   }
   &__selector {
-    @include u-list(10);
+    @include u-list(13);
     position: absolute;
-    bottom: 5%;
+    bottom: 23px;
     left: 50%;
     transform: translateX(-50%);
     i {
       opacity: 0.5;
       transition: opacity 0.3s;
+      font-size: 8px;
       cursor: pointer;
     }
     .active {
