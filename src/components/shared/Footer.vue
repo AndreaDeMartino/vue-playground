@@ -101,12 +101,12 @@ export default {
     @include u-flex();
     p {
       color: $light;
-      margin-right: 100px;
+      margin-right: 76px;
       white-space: nowrap;
       position: relative;
       transition: color 0.6s linear;
       font-family: "gotham-medium";
-      letter-spacing: 0.1em;
+      letter-spacing: 0.7px;
       cursor: pointer;
       &:last-child {
         margin-right: 0;

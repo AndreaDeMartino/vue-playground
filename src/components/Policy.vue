@@ -30,13 +30,11 @@ export default {
   bottom: 0;
   left: 0;
   background: rgb(255, 255, 255);
-  background: radial-gradient(circle, $light 0%, rgb(206, 205, 205) 71%);
   color: $dark;
   z-index: 5;
   @include u-flex;
   &__text {
     font-size: 10px;
-    color: $light-text;
   }
   &__button {
     width: 100px;

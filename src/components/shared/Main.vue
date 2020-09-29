@@ -160,4 +160,22 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@include tablet {
+  .cards {
+    padding: 20px 0;
+  }
+}
+
+@include mobile {
+  .cards {
+    padding: 20px 0;
+  }
+}
+
+@include small-mobile {
+  .cards {
+    padding: 20px 0;
+  }
+}
 </style>

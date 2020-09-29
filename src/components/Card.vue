@@ -34,11 +34,16 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  height: 350px;
-  width: 350px;
-  margin: 15px;
+  height: 349px;
+  width: 360px;
+  margin-right: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: $light;
   @include u-flex(column);
+  &:last-child {
+    margin-right: 0;
+  }
   &__image img {
     height: 100px;
     width: 100%;
@@ -52,6 +57,7 @@ export default {
       max-height: 90%;
       padding: 0 50px;
       font-size: 16px;
+      letter-spacing: 0.35px;
       overflow-y: auto;
     }
   }
@@ -79,13 +85,41 @@ export default {
       .button__text {
         color: $gold;
         text-shadow: 1px 1px 1px rgba(119, 115, 60, 0.795);
+        letter-spacing: 2.1px;
       }
     }
     .button__text {
       font-size: 14px;
-      letter-spacing: 0.1em;
+      letter-spacing: 2.1px;
       color: $light;
       transition: color 0.7s ease-in, text-shadow 0.7s linear;
+    }
+  }
+}
+
+// Responsive
+@include tablet {
+  .card {
+    &:last-child {
+      margin-right: 30px;
+    }
+  }
+}
+
+@include mobile {
+  .card {
+    margin: 10px;
+    &:last-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+@include small-mobile {
+  .card {
+    margin: 10px;
+    &:last-child {
+      margin-right: 10px;
     }
   }
 }

@@ -81,12 +81,13 @@ export default {
     &__sub-title {
       min-width: 220px;
       font-size: 14px;
+      letter-spacing: 0.35px;
     }
     &__button {
       max-width: 250px;
       @include u-flex;
       font-size: 14px;
-      letter-spacing: 0.2em;
+      letter-spacing: 2.1px;
       transition: color 0.3s linear, box-shadow 0.3s linear,
         background-color 0.3s linear;
       cursor: pointer;
@@ -170,6 +171,18 @@ export default {
 /****************************************************
   * Responsive
   ****************************************************/
+
+@include large-desktop {
+  .banner {
+    min-width: 400px;
+  }
+}
+
+@include desktop {
+  .banner {
+    min-width: 400px;
+  }
+}
 
 @include tablet {
   .u-row {

@@ -119,11 +119,11 @@ export default {
     }
     &__right {
       .navbar__list {
-        @include u-list(10);
+        @include u-list(13);
         h4 {
           color: $light;
           font-weight: 300;
-          letter-spacing: 0.1em;
+          letter-spacing: 0.7px;
           &:hover {
             @include u-led;
           }
@@ -144,8 +144,10 @@ export default {
       &__left {
         margin-bottom: 0;
       }
-      &__list {
-        @include u-list(20);
+      &__right {
+        .navbar__list {
+          @include u-list(38);
+        }
       }
     }
   }
@@ -158,8 +160,10 @@ export default {
       &__left {
         margin-bottom: 0;
       }
-      &__list {
-        @include u-list(25);
+      &__right {
+        .navbar__list {
+          @include u-list(38);
+        }
       }
     }
   }

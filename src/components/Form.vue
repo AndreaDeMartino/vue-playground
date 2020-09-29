@@ -10,7 +10,7 @@
       <!-- Contact Title -->
       <div class="contact__text">
         <h2
-          class="u-text--light u-mb--30"
+          class="u-text--light u-mb--25"
           :class="{
             validated:
               !$v.message.$invalid &&
@@ -19,12 +19,19 @@
               !$v.lastname.$error,
           }"
         >
-          contact <br />
-          us.
+          contact us.
         </h2>
         <p class="contact__subtext">
-          Playground srl <br />Via G. Mazzini 3/C, <br />
-          Cernusco Sul Naviglio (Milano) <br />-<br />
+          Playground srl
+        </p>
+        <p class="contact__subtext">
+          Via G. Mazzini 3/C,
+        </p>
+        <p class="contact__subtext">
+          Cernusco Sul Naviglio (Milano)
+        </p>
+        <p class="contact__subtext">-</p>
+        <p class="contact__subtext">
           T +39 0240706003
         </p>
       </div>
@@ -236,6 +243,8 @@ export default {
       height: 350px;
       margin-right: 125px;
       h2 {
+        max-width: 269px;
+        line-height: 70px;
         transition: text-shadow 0.3s linear;
       }
       h2.validated {
@@ -244,8 +253,10 @@ export default {
           0 0 30px $gold, 0 0 35px $gold, 2px 2px 1px rgba(206, 199, 37, 0);
       }
       .contact__subtext {
-        max-width: 80%;
+        max-width: 225px;
+        line-height: 25px;
         color: $light;
+        letter-spacing: 0.35px;
       }
     }
     .contact__form {
@@ -265,7 +276,7 @@ export default {
         border: 1px solid $light;
         outline: none;
         transition: border-color 0.3s linear;
-        letter-spacing: 1px;
+        letter-spacing: 0.35px;
         position: relative;
       }
       input.invalid.active {
@@ -296,6 +307,7 @@ export default {
         animation: inputMove 0.1s linear forwards;
       }
       textarea {
+        height: 141px;
         width: 100%;
         background-color: $dark;
         font-size: 14px;
@@ -322,12 +334,14 @@ export default {
         text-shadow: 0.3px 0.3px 1.5px rgb(119, 119, 61);
       }
       .button {
-        width: 30%;
+        width: 159px;
+        height: 40px;
         background-color: $light;
         color: $dark;
-        margin: 12px 0 10px 0;
+        margin-top: 15px;
         padding: 14px;
         font-family: "gotham-medium";
+        letter-spacing: 1.4px;
         border: none;
         @include u-flex;
         margin-top: 10px;
@@ -367,16 +381,21 @@ export default {
   * Responsive
   ****************************************************/
 
-@include mobile {
+@include small-mobile {
   .contact {
     .sent__message {
       font-size: 10px;
     }
     .contact__text {
+      height: 100%;
       margin-bottom: 0;
       margin: 20px;
       h2 {
+        text-align: center;
         font-size: 60px;
+      }
+      .contact__subtext {
+        max-width: 100%;
       }
     }
     .contact__form {
@@ -387,16 +406,22 @@ export default {
   }
 }
 
-@include small-mobile {
+@include mobile {
   .contact {
     .sent__message {
       font-size: 10px;
     }
     .contact__text {
+      height: 100%;
       margin-bottom: 0;
       margin: 20px;
+      text-align: center;
       h2 {
+        text-align: center;
         font-size: 60px;
+      }
+      .contact__subtext {
+        max-width: 100%;
       }
     }
     .contact__form {
@@ -411,16 +436,17 @@ export default {
   .contact {
     &__wrapper {
       .contact__text {
-        height: 200px;
+        height: 100%;
         margin-right: 0;
-        @include u-flex;
+        margin: 20px 0;
+        @include u-flex(column);
         h2 {
           text-align: center;
           margin-bottom: 0 !important;
         }
         .contact__subtext {
           margin-right: 0;
-          margin-left: 30px;
+          margin-left: 0;
         }
       }
       .sent__message {
@@ -431,6 +457,15 @@ export default {
           margin-bottom: 40px;
         }
       }
+    }
+  }
+}
+
+@include desktop {
+  .contact {
+    padding: 20px 0;
+    .contact__text{
+      height: 100%;
     }
   }
 }

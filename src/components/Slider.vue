@@ -29,8 +29,7 @@
     <!-- Slider Text -->
     <div class="slider__text">
       <h2 class="u-text--light u-mb--30">
-        lorem <br />
-        ipsum.
+        lorem ipsum.
       </h2>
       <p class="u-text--light">
         Consectetur adipiscing elit.
@@ -150,8 +149,12 @@ export default {
     top: 50%;
     left: 20%;
     transform: translateY(-50%);
+    h2{
+      max-width: 234px;
+      line-height: 64px;
+    }
     p {
-      opacity: 0.7;
+      letter-spacing: 0.35px;
     }
   }
   &__selector {

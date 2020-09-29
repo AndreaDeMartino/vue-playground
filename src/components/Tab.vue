@@ -99,11 +99,12 @@ export default {
   background-color: $bg_light;
   @include u-flex;
   &__wrapper {
+    max-width: 98%;
     @include u-flex(row, center, flex-start);
     .tabs__box {
       .tab {
         height: 60px;
-        width: 400px;
+        width: 390px;
         background-color: $bg_dark;
         font-family: "gotham-book";
         margin: 1px 0;
@@ -115,6 +116,7 @@ export default {
           padding-left: 70px;
           color: $dark;
           text-align: left;
+          letter-spacing: 1.4px;
         }
         i {
           margin-left: 6px;
@@ -131,10 +133,10 @@ export default {
       }
     }
     .tabs__show {
-      height: 350px;
-      width: 650px;
+      height: 340px;
+      width: 751px;
       background-color: $light;
-      padding: 50px 100px;
+      padding: 51.3px 99.1px 46.5px 97.5px;
       box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
       overflow-y: auto;
       position: relative;
@@ -142,6 +144,7 @@ export default {
         span {
           font-family: "gotham-book";
           font-size: 14px;
+          letter-spacing: 0.35px;
           color: $dark;
         }
       }
