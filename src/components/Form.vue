@@ -375,6 +375,9 @@ export default {
     .contact__text {
       margin-bottom: 0;
       margin: 20px;
+      h2 {
+        font-size: 60px;
+      }
     }
     .contact__form {
       .button {
@@ -392,6 +395,9 @@ export default {
     .contact__text {
       margin-bottom: 0;
       margin: 20px;
+      h2 {
+        font-size: 60px;
+      }
     }
     .contact__form {
       .button {
