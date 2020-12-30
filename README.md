@@ -4,7 +4,7 @@
  <img src="https://i.ibb.co/VNQt9VL/Screenshot-2020-10-10-at-22-51-23.png" align="center" alt="GitHub Readme Stats" />
 </p>
 
-## Url of the deployed project:
+## Deployed project:
 
 https://vue-playground-spa.web.app/
 
